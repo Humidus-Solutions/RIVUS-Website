@@ -8,7 +8,7 @@
  Visamos ajudar as empresas a reduzirem suas despesas com água e esgoto e contribuir para a preservação do meio ambiente.
  Este é um projeto desenvolvido Grupo <b>Humidus Rivus</b> como sequencia de estudos da disciplina de <b>Pesquisa e Inovação</b> do curso de Análise e Desenvolvimento de Sisitemas da Faculdade de Tecnologia São Paulo Tech School (SPTECH).
 
-<br><br><br><br>
+<br><br>
 
 ## Sobre
 
