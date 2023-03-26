@@ -4,19 +4,20 @@
 
 ## Introdução
 
- A Humidus Rivus tem como objetivo reduzir o consumo de água em ambientes empresariais por meio da reutilização da água da chuva e outras fontes alternativas.
- Visamos ajudar as empresas a reduzirem suas despesas com água e esgoto e contribuir para a preservação do meio ambiente.
- Este é um projeto desenvolvido Grupo <b>Humidus Rivus</b> como sequencia de estudos da disciplina de <b>Pesquisa e Inovação</b> do curso de Análise e Desenvolvimento de Sisitemas da Faculdade de Tecnologia São Paulo Tech School (SPTECH).
+A Humidus Rivus tem como objetivo reduzir o consumo de água em ambientes empresariais por meio da reutilização da água da chuva e outras fontes alternativas.
+ 
+Este é um projeto desenvolvido Grupo <b>Humidus Rivus</b> como sequencia de estudos da disciplina de <b>Pesquisa e Inovação</b> do curso de ADS da São Paulo Tech School (SPTECH).
 
 <br><br>
 
 ## Sobre
 
-Rivus é um sistema de reutilização de água com sensores de bloqueio pode ajudar a empresa a economizar água e, consequentemente, reduzir as despesas com água e esgoto. O sistema de reutilização de água consistirá em um tanque de armazenamento de água da chuva ou outra fonte alternativa, um sistema de tratamento de água, uma bomba de água, e sensores de bloqueio para controlar o consumo de água. Os sensores serão programados para <b>desligar a água automaticamente após um determinado período de tempo</b> e <b>detectar a presença ou ausência de água no tanque</b>.
+Rivus é um sistema de reutilização de água com sensores de bloqueio para ajudar as empresas a economizar água e, consequentemente, reduzir as despesas com água e esgoto. Os sensores serão programados para <b>desligar a água automaticamente após um determinado período de tempo</b> e <b>detectar a presença ou ausência de água no tanque</b>.
 
 <br>
 
-## Simulador Financeiro
+## [Site Institucional](https://github.com/Humidus-Solutions/RIVUS-Website)
+Para analisar o localmente:
 
 **1. Clone o repositório em sua máquina local usando o comando**:
 ```
@@ -30,7 +31,7 @@ cd nome_da_pasta
     
 **3. Abre a página em seu navegador**:
 ```
-start simulador_financeiro.html
+start index.html
 ```
 
 <br>
