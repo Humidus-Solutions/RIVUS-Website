@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastrosSTYLE.css/style2.css">
+</head>
+<body>
+    <div id="main-container">
+        <h1>Cadastre-se</h1>
+        <form id="register-form">
+            <div class="full-box">
+                <label for="email">Empresa</label>
+                <input type="text" name="empresa" id="empresa" placeholder="Digite o nome da empresa" data-min-length="3" data-only-letters="">
+            </div>
+            <div class="half-box spacing">
+                <label for="number">CNPJ</label>
+                <input type="number" name="number" id="number" placeholder="Digite o CNPJ da empresa" data-max-length="14" data-required data-only-number="" >
+            </div>
+            <div class="half-box spacing">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" placeholder="Digite o E-mail" data-required data-email-validate>
+            </div>
+            <div class="half-box spacing">
+                <label for="password spacing">Senha</label>
+                <input type="password" name="password" id="password" placeholder="Digite a sua senha" data-required data-password-validate>
+            </div>
+            <div class="half-box spacing">
+                <label for="passconfirmation">Confirmar senha</label>
+                <input type="password" name="passconfirmation" id="passconfirmation" placeholder="Confirme a sua senha" data-equal="password" data-required>
+            </div>
+            <div class="full-box">
+                <input type="checkbox" name="agreement" id="agreement">
+                <label for="agreement" id="agreement-label">Eu li e aceito os <a href="#">termos de uso</a></label>
+            </div>
+            <div class="full-box">
+                <input type="submit" id="btn-submit" value="Registrar">
+                 <div id="login-container">
+                    <p>Ainda não tem uma conta?</p>
+                    <a href="Login.html">Registrar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <p class="error-validation template"></p>
+    <script src="js/scripts.js"></script>
+   
+</body>
+</html>
