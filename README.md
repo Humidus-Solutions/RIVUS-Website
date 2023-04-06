@@ -41,8 +41,29 @@ start simulador_financeiro.html
     
 <br>
 
-## Participantes
-    ADS 01.01.23 C
+## Colaboradores
+<!--
+Template:
+---------
+<a href="https://github.com/____" target="_blank" title="____">
+  <img src="https://github.com/____.png?size=40" height="40" width="40" alt="____" />
+</a>
+Instructions:
+-------------
+1. Copy the template and paste it below.
+2. Replace the four "____" strings with the contributor's GitHub username.
+Note: I specified the avatars using HTML because, when I did so using Markdown,
+      only the _custom_ avatars appeared at the size I specified via the URL
+      (e.g. 40px squared, for `https://github.com/gitname.png?size=40`);
+      the GitHub-generated avatars seemed to ignore the size parameter and,
+      instead, appear at their full size (approximately 420px squared).
+      By using HTML, I can force _both_ types to appear at 40px squared.
+-->
+ 1 ADS C
+ <br>
+ <a href="https://github.com/danielvor" target="_blank" title="Daniel Rodrigues">
+ <img src="https://github.com/danielvor.png?size=40" height="40" width="40" alt="Daniel Rodrigues" />
+ </a>
     
     Arthur Garcia
     Carlos Henrique
@@ -66,4 +87,4 @@ start simulador_financeiro.html
 
 ## Licença
 
-[MIT](LICENSE) © 2023 Solutech 
+[MIT](LICENSE) © 2023 Humidus Solutions 
