@@ -1,7 +1,7 @@
 <!-- # [Rivus](https://github.com/Humidus-Solutions/)-->
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Humudis+Solutions)](https://git.io/typing-svg)
 
-### Introdução
+### `Introdução`
 
 A Humidus Rivus tem como objetivo reduzir o consumo de água em ambientes empresariais por meio da reutilização da água da chuva e outras fontes alternativas.
  
@@ -9,11 +9,10 @@ Este é um projeto desenvolvido Grupo <b>Humidus Rivus</b> como sequencia de est
 
 **Rivus** é o nome do nosso sistema de reutilização de água com sensores de bloqueio para ajudar as empresas a economizar água e, consequentemente, reduzir as despesas com água e esgoto. Os sensores serão programados para desligar a água automaticamente após um determinado período de tempo e detectar a presença ou ausência de água no tanque.
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Site+Institucional)](https://git.io/typing-svg)
+### `Rivus Website`
+Como testar:
 
-Para analisar os arquivos localmente:
-
-**1. Clone o repositório em sua máquina local usando o comando**:
+**1. Clone o repositório em sua máquina local usando o comando**: 
 ```
 git clone https://github.com/Humidus-Solutions/CalculadoraFinanceira.git
 ```
@@ -59,26 +58,31 @@ Note: I specified the avatars using HTML because, when I did so using Markdown,
       instead, appear at their full size (approximately 420px squared).
       By using HTML, I can force _both_ types to appear at 40px squared.
 -->
- 1 ADS C
- <br>
- <a href="https://github.com/danielvor" target="_blank" title="Daniel Rodrigues">
- <img src="https://github.com/danielvor.png?size=40" height="40" width="40" alt="Daniel Rodrigues" />
- </a>
-    
-    Arthur Garcia
-    Carlos Henrique
-    Gabriel Nascimento Freitas
-    Gustavo Morais
-    Kauã Leal
-    Yan Carlos Camargo Bezerra
-    Daniel Victor de Oliveira Rodrigues
-    Erick Nunes de Araújo
-    Gabriel Nascimento Freitas
-    Jhonatha Gabriell Carneiro
-    Raquel Vitoria Sousa Guimarães
-    Victor Beralde Cardoso
-    
-<br>
+
+<a href="https://github.com/danielvor" target="_blank" title="Daniel Rodrigues">
+<img src="https://github.com/danielvor.png?size=40" height="40" width="40" alt="Daniel Rodrigues" />
+</a>
+
+<a href="https://github.com/jhonathaGC" target="_blank" title="Jhonatha Carneiro">
+  <img src="https://github.com/jhonathaGC.png?size=40" height="40" width="40" alt="Jhonatha Carneiro" />
+</a>
+
+<a href="https://github.com/VictorBeralde" target="_blank" title="Victor Beralde">
+  <img src="https://github.com/VictorBeralde.png?size=40" height="40" width="40" alt="Victor Beralde" />
+</a>
+
+<a href="https://github.com/erickNA2" target="_blank" title="Erick Araújo">
+  <img src="https://github.com/erickNA2.png?size=40" height="40" width="40" alt="Erick Araújo" />
+</a>
+
+<a href="https://github.com/raquelmiyy" target="_blank" title="Raquel Guimarães">
+  <img src="https://github.com/raquelmiyy.png?size=40" height="40" width="40" alt="Raquel Guimarães" />
+</a>
+
+<a href="https://github.com/Gabriel-N-Freitas" target="_blank" title="Gabriel Freitas">
+  <img src="https://github.com/Gabriel-N-Freitas.png?size=40" height="40" width="40" alt="Gabriel Freitas" />
+</a>
+
 
 ## Agradecimentos
 
