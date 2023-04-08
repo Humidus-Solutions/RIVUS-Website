@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto IoT - Gráficos</title>
-    <link rel="stylesheet" href="CSS/dashboards.css">
+    <link rel="stylesheet" href="./CSS/dashboard.css">
 
     <!-- script do google charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -58,9 +58,14 @@
             <button class="btn" id="botaoCaminhao2" onclick="plotarGrafico(1)">Caminhão 2</button>
             <button class="btn" id="botaoCaminhao3" onclick="plotarGrafico(2)">Caminhão 3</button>
             <button class="btn" id="botaoCaminhao4" onclick="plotarGrafico(3)">Caminhão 4</button>
+            <button class="btn" id="botaoCaminhao5" onclick="plotarGrafico(4)">Caminhão 5</button>
+            <button class="btn" id="botaoCaminhao6" onclick="colorize(opaque)">Caminhão 6</button>
         </div>
         <div id="grafico" style="width:75%; margin: auto">
             <canvas id="myChart"></canvas>
+        </div>
+        <div id="grafico" style="width:75%; margin: auto">
+            <canvas id="myChart2"></canvas>
         </div>
     </div>
 </body>
@@ -77,7 +82,9 @@
         [3, 18, 7, 2, 3, 2],
         [11, 10, 9, 6, 1, 4],
         [9, 17, 4, 15, 5, 8],
-        [8, 5, 9, 7, 19, 9]
+        [8, 5, 9, 7, 19, 9],
+        [28, 15, 9, 7, 19, 29],
+        [28, 15, 9, 7, 19, 29]
     ]
 
     var caminhaoNow;
@@ -130,15 +137,84 @@
             }
         });
         
+        var ctx2 = document.getElementById('myChart2').getContext('2d');
+        var myChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Dado 1', 'Dado 2', 'Dado 3', 'Dado 4', 'Dado 5', 'Dado 6'],
+                datasets: [{
+                    label: 'Temperatura em °C',
+                    // aqui insere informações do JSON no gráfico
+                    data: infosCaminhoes[idCaminhao],
+                    backgroundColor: [
+                        'rgba(255, 69, 0, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 69, 0)',
+                        'rgba(255, 69, 0)',
+                        'rgba(255, 69, 0)',
+                        'rgba(255, 69, 0)',
+                        'rgba(255, 69, 0)',
+                        'rgba(255, 69, 0)'
+                    ],
+                    pointRadius: 3,
+                    pointBackgroundColor: 'rgba(255, 69, 0)'    
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            max: 25,
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+
         alterarCoresBotoes(idCaminhao);
 
     }
+    var ctx3 = document.getElementById('myChart3').getContext('2d');
+    function colorize(opaque) {
+  return (ctx3) => {
+    const v = ctx.parsed.y;
+    const c = v < -50 ? '#D60000'
+      : v < 0 ? '#F46300'
+      : v < 50 ? '#0358B6'
+      : '#44DE28';
+
+    return opaque ? c : Utils.transparentize(c, 1 - Math.abs(v / 150));
+  };
+}
+
+const config = {
+  type: 'bar',
+  data: data,
+  options: {
+    plugins: {
+      legend: false,
+    },
+    elements: {
+      bar: {
+        backgroundColor: colorize(false),
+        borderColor: colorize(true),
+        borderWidth: 2
+      }
+    }
+  }
+};
+    
 
     function alterarCoresBotoes(idcaminhao) {
         botaoCaminhao1.className = "btn"
         botaoCaminhao2.className = "btn"
         botaoCaminhao3.className = "btn"
         botaoCaminhao4.className = "btn"
+        botaoCaminhao5.className = "btn"
+        botaoCaminhao6.className = "btn"
 
         if (idcaminhao == "0") {
             botaoCaminhao1.className += " btn-now"
@@ -148,6 +224,10 @@
             botaoCaminhao3.className += " btn-now"
         } else if (idcaminhao == "3") {
             botaoCaminhao4.className += " btn-now"
+        }else if(idcaminhao == "4"){
+            botaoCaminhao5.className += " btn-now"
+        } else if(idcaminhao6 == "5"){
+            botaoCaminhao5.className += " btn-now"
         }
     }    
 
