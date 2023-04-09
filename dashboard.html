@@ -58,9 +58,19 @@
             <button class="btn" id="botaoCaminhao2" onclick="plotarGrafico(1)">Caminhão 2</button>
             <button class="btn" id="botaoCaminhao3" onclick="plotarGrafico(2)">Caminhão 3</button>
             <button class="btn" id="botaoCaminhao4" onclick="plotarGrafico(3)">Caminhão 4</button>
+            <br>
+            <button class="btn" id="botaoCarro1" onclick="plotarGrafico2(0)">Carro 1</button>
+            <button class="btn" id="botaoCarro2" onclick="plotarGrafico2(1)">Carro 2</button>
+            <button class="btn" id="botaoCarro3" onclick="plotarGrafico2(2)">Carro 3</button>
+            <button class="btn" id="botaoCarro4" onclick="plotarGrafico2(3)">Carro 4</button>
         </div>
-        <div id="grafico" style="width:75%; margin: auto">
-            <canvas id="myChart"></canvas>
+        <div class="container" style="display: flex; flex-direction:row;">
+            <div id="grafico" style="width:30%; margin: auto">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div id="grafico2" style="width:30%; margin: auto">
+                <canvas id="myChart2"></canvas>
+            </div>
         </div>
     </div>
 </body>
@@ -77,13 +87,21 @@
         [3, 18, 7, 2, 3, 2],
         [11, 10, 9, 6, 1, 4],
         [9, 17, 4, 15, 5, 8],
-        [8, 5, 9, 7, 19, 9]
+        [8, 5, 9, 7, 19, 9],
     ]
-
+    var infosCarros = [
+        [3, 18, 7, 2, 3, 2],
+        [11, 10, 9, 6, 1, 4],
+        [9, 17, 4, 15, 5, 8],
+        [8, 5, 9, 7, 19, 9],
+    ]
+    
     var caminhaoNow;
+    var carroNow;
     
     // mostra o gráfico do primeiro caminhao assim que a página carregar
     plotarGrafico(0);
+    plotarGrafico2(0);
     
     // declara função que cria gráfico
     function plotarGrafico(idCaminhao) {
@@ -96,7 +114,7 @@
         // inicia a criação do gráfico
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: ['Dado 1', 'Dado 2', 'Dado 3', 'Dado 4', 'Dado 5', 'Dado 6'],
                 datasets: [{
@@ -129,10 +147,55 @@
                 }
             }
         });
-        
         alterarCoresBotoes(idCaminhao);
-
     }
+    function plotarGrafico2(idCarro) {
+        //limpa o gráfico primeiro
+        grafico2.innerHTML = "<canvas id=\"myChart2\"></canvas>";
+        
+        // indica o caminhao selecionado
+        carroNow = idCarro;
+        
+        // inicia a criação do gráfico
+        var ctx2 = document.getElementById('myChart2').getContext('2d');
+        var myChart2 = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['Dado 1', 'Dado 2', 'Dado 3', 'Dado 4', 'Dado 5', 'Dado 6'],
+                datasets: [{
+                    label: 'Temperatura em °C',
+                    // aqui insere informações do JSON no gráfico
+                    data: infosCarros[idCarro],
+                    backgroundColor: [
+                        'rgba(255, 69, 0, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 69, 0)',
+                        'rgba(255, 69, 0)',
+                        'rgba(255, 69, 0)',
+                        'rgba(255, 69, 0)',
+                        'rgba(255, 69, 0)',
+                        'rgba(255, 69, 0)'
+                    ],
+                    pointRadius: 3,
+                    pointBackgroundColor: 'rgba(255, 69, 0)'    
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            max: 25,
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        
+        alterarCoresBotoes2(idCarro);
+    }
+    
 
     function alterarCoresBotoes(idcaminhao) {
         botaoCaminhao1.className = "btn"
@@ -151,4 +214,22 @@
         }
     }    
 
-</script
+    function alterarCoresBotoes2(idCarro) {
+        botaoCarro1.className = "btn"
+        botaoCarro2.className = "btn"
+        botaoCarro3.className = "btn"
+        botaoCarro4.className = "btn"
+
+        if (idCarro == "0") {
+            botaoCarro1.className += " btn-now"
+        } else if (idCarro == "1") {
+            botaoCarro2.className += " btn-now"
+        } else if (idCarro == "2") {
+            botaoCarro3.className += " btn-now"
+        } else if (idCarro == "3") {
+            botaoCarro4.className += " btn-now"
+        }
+    }    
+   
+
+</script>
