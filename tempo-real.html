@@ -59,13 +59,14 @@
             <button class="btn" id="botaoCaminhao3" onclick="plotarGrafico(2)">Caminhão 3</button>
             <button class="btn" id="botaoCaminhao4" onclick="plotarGrafico(3)">Caminhão 4</button>
             <button class="btn" id="botaoCaminhao5" onclick="plotarGrafico(4)">Caminhão 5</button>
-            <button class="btn" id="botaoCaminhao6" onclick="colorize(opaque)">Caminhão 6</button>
         </div>
-        <div id="grafico" style="width:75%; margin: auto">
-            <canvas id="myChart"></canvas>
-        </div>
-        <div id="grafico" style="width:75%; margin: auto">
-            <canvas id="myChart2"></canvas>
+        <div class="container" style="display: flex;">
+            <div id="grafico" style="width:20%; margin: auto">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div id="grafico2" style="width:20%; margin: auto">
+                <canvas id="myChart2"></canvas>
+            </div>
         </div>
     </div>
 </body>
@@ -103,42 +104,6 @@
         // inicia a criação do gráfico
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Dado 1', 'Dado 2', 'Dado 3', 'Dado 4', 'Dado 5', 'Dado 6'],
-                datasets: [{
-                    label: 'Temperatura em °C',
-                    // aqui insere informações do JSON no gráfico
-                    data: infosCaminhoes[idCaminhao],
-                    backgroundColor: [
-                        'rgba(255, 69, 0, 0.6)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 69, 0)',
-                        'rgba(255, 69, 0)',
-                        'rgba(255, 69, 0)',
-                        'rgba(255, 69, 0)',
-                        'rgba(255, 69, 0)',
-                        'rgba(255, 69, 0)'
-                    ],
-                    pointRadius: 3,
-                    pointBackgroundColor: 'rgba(255, 69, 0)'    
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            max: 25,
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
-        
-        var ctx2 = document.getElementById('myChart2').getContext('2d');
-        var myChart = new Chart(ctx2, {
             type: 'bar',
             data: {
                 labels: ['Dado 1', 'Dado 2', 'Dado 3', 'Dado 4', 'Dado 5', 'Dado 6'],
@@ -147,6 +112,11 @@
                     // aqui insere informações do JSON no gráfico
                     data: infosCaminhoes[idCaminhao],
                     backgroundColor: [
+                        'rgba(255, 69, 0, 0.6)',
+                        'rgba(255, 69, 0, 0.6)',
+                        'rgba(255, 69, 0, 0.6)',
+                        'rgba(255, 69, 0, 0.6)',
+                        'rgba(255, 69, 0, 0.6)',
                         'rgba(255, 69, 0, 0.6)'
                     ],
                     borderColor: [
@@ -172,63 +142,27 @@
                 }
             }
         });
-
-
-        alterarCoresBotoes(idCaminhao);
-
     }
-    var ctx3 = document.getElementById('myChart3').getContext('2d');
-    function colorize(opaque) {
-  return (ctx3) => {
-    const v = ctx.parsed.y;
-    const c = v < -50 ? '#D60000'
-      : v < 0 ? '#F46300'
-      : v < 50 ? '#0358B6'
-      : '#44DE28';
-
-    return opaque ? c : Utils.transparentize(c, 1 - Math.abs(v / 150));
-  };
-}
-
-const config = {
-  type: 'bar',
-  data: data,
-  options: {
-    plugins: {
-      legend: false,
-    },
-    elements: {
-      bar: {
-        backgroundColor: colorize(false),
-        borderColor: colorize(true),
-        borderWidth: 2
-      }
-    }
-  }
-};
     
 
-    function alterarCoresBotoes(idcaminhao) {
+    function alterarCoresBotoes(idCaminhao) {
         botaoCaminhao1.className = "btn"
         botaoCaminhao2.className = "btn"
         botaoCaminhao3.className = "btn"
         botaoCaminhao4.className = "btn"
         botaoCaminhao5.className = "btn"
-        botaoCaminhao6.className = "btn"
 
-        if (idcaminhao == "0") {
+        if (idCaminhao == "0") {
             botaoCaminhao1.className += " btn-now"
-        } else if (idcaminhao == "1") {
+        } else if (idCaminhao == "1") {
             botaoCaminhao2.className += " btn-now"
-        } else if (idcaminhao == "2") {
+        } else if (idCaminhao == "2") {
             botaoCaminhao3.className += " btn-now"
-        } else if (idcaminhao == "3") {
+        } else if (idCaminhao == "3") {
             botaoCaminhao4.className += " btn-now"
-        }else if(idcaminhao == "4"){
-            botaoCaminhao5.className += " btn-now"
-        } else if(idcaminhao6 == "5"){
+        }else if(idCaminhao == "4"){
             botaoCaminhao5.className += " btn-now"
         }
-    }    
+    }       
 
 </script>
