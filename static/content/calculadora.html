@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../assets/css/calculadora.css">
+    <title>Simulador Financeiro</title>
+</head>
+
+<body class="corpo">
+
+    <h1 class="h1">
+        <center>
+            Simulador do Sistema Cisterna
+        </center>
+
+        <img class="logo"
+            src="https://raw.githubusercontent.com/Humidus-Solutions/RIVUS-Website/master/assets/humidus1.png" alt="Logo" href="./index.html">
+
+    </h1>
+
+    <body class="corpo">
+        <div class="divpai">
+
+            <div id="divfilho" class="divfilho">
+
+                <div id="div_check">
+                    Qual o porte da sua empresa?<br> 
+                    <input type="text" id="input_porte_empresa" placeholder="Grande/Média/Pequena">
+                </div>
+
+                <div id="div_cisterna">
+                    Sua empresa possui cisterna?<br>
+                    <button onclick="analisar_checkSim()">Sim</button>
+                    <button onclick="analisar_checkNao()">Não</button>
+                </div>
+                <div class="conteudo">
+                    <div id="div_frase"></div>
+                </div>
+            </div>
+
+            <div class="dentro" id="dentro">
+                <div id="div_reuso"></div>
+            </div>
+
+        </div>
+    </body>
+
+</html>
+
+
+<script>
+
+    function analisar_checkSim() {
+        var porte = input_porte_empresa.value;
+
+
+        if (porte) {
+            div_frase.innerHTML = `<br>Insira a quantidade de litros que a cisterna suporta: <input id="input_cisterna_empresa"><br>`
+            var cisterna_instalada = Number(input_cisterna_empresa.value);
+        }
+
+        if (porte) {
+            divfilho.style.height =`390px`;
+            div_frase.innerHTML += `Área da empresa (em M²): <input id="input_area"><br>
+            Quantidade de funcionários: <input id="input_func"><br>
+            Quantidade de litros gastos por mês: <input id="input_litros"><br>
+            Média do valor da conta de água do último mês: <input id="input_valor_agua"><br>
+            <button onclick="economia()"> Calcular custos</button>`
+        }
+        
+    }
+
+    function analisar_checkNao() {
+        var porte = input_porte_empresa.value;
+
+
+        if (porte) {
+            
+            divfilho.style.height =`300px`;
+            div_frase.innerHTML += `Área da empresa (em M²): <input id="input_area"><br>
+            Quantidade de funcionários: <input id="input_func"><br>
+            Quantidade de litros gastos por mês: <input id="input_litros"><br>
+            Média do valor da conta de água do último mês: <input id="input_valor_agua"><br>
+            <button onclick="economia()"> Calcular custos</button>`
+        }
+    }
+
+    function economia() {
+
+        var m2 = Number(input_area.value);// valor do tamanho da empresa
+        var funcionarios = Number(input_func.value);// qntd de funcinarios
+        var litros_mes = Number(input_litros.value);// qntd de litros gastos/mes
+        var potavel = (funcionarios * 8) * 30; // qntd de água potável que os funcionários necessitam por mês
+        var reuso = litros_mes - potavel;// qntd de água que a empresa pode utilizar de reuso para limpeza, irrigação e etc..
+        var chuva = (m2 * 83.3) * 0.8;// média da qntd de litros de chuva capazes de serem captados pela cisterna no mês
+        var qnt_litros_fornecedora = (reuso - chuva) + potavel;// qntd de litros que a empresa precisará comprar que é o volume de água captado pela cisterna + a quantidade necessária de água potavel
+        var media_conta_mensal = Number(input_valor_agua.value)// média do valor ++das últimas contas de água
+        var taxa_fornecedora = (qnt_litros_fornecedora * 13.07) / 1000// preço que a empresa terá que pagar pela água comprada da fornecedora
+        var total_economia = media_conta_mensal - taxa_fornecedora; // valor de economia que a empresa terá, subtrai
+
+
+        if (chuva >= reuso) {
+            var economia = ((potavel * 13.7) - media_conta_mensal) * 0.80;
+            dentro.style.display =`block`;
+            div_reuso.innerHTML = `<br>Você gastou <b>R$${media_conta_mensal}</b> no último mês, utilizando um total de <b>${litros_mes}</b> litros .<br>
+        Com a implementação do projeto RIVUS na sua empresa você ajuda o meio ambiente, utiliza <b>${reuso}</b> litros de água de reuso e economiza até <b>${economia}</b>
+    
+        `;// se o total de captação de água da chuva for maior ou igual ao reuso a empresa pagaá apenas a água potável para consumo dos funcionários e visitantes
+        }
+        if (chuva < reuso) {
+            dentro.style.display =`block`;
+            div_reuso.innerHTML = `<br>Você gastou <b>R$${media_conta_mensal}</b> no último mês, utilizando um total de <b>${litros_mes}</b> litros .<br>
+        Com a implementação do projeto RIVUS na sua empresa você ajuda o meio ambiente, utiliza <b>${reuso}</b> litros de água de reuso e economiza até <b>${(total_economia.toFixed(2)) * 0.80}</b>
+    
+        `;// caso volume de captação for menor do que o necessário a empresa precisará comprar o restante da fornecedora + a água potável para consumo dos funcionários e visitantes
+        }
+    }
+
+
+
+</script>
