@@ -23,7 +23,7 @@ git clone https://github.com/Humidus-Solutions/RIVUS-Website.git
 
 **2. Vá para o diretório do site**:
 ```
-cd site
+cd site/public/
 ```
     
 **3. Abre a página em seu navegador**:
