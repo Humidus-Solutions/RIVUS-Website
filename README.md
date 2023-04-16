@@ -1,94 +1,75 @@
 <!-- # [Rivus](https://github.com/Humidus-Solutions/)-->
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Humudis+Solutions)](https://git.io/typing-svg)
+![Rivus](https://github.com/Humidus-Solutions/RIVUS-Website/blob/main/site/public/assets/img/humidus-banner.jpg)
+### `Sobre Nós`
 
-### `Introdução`
+A Humidus Rivus é uma empresa que visa reduzir o consumo de água em ambientes empresariais por meio da captação, tratamento e reutilização da água da chuva.
 
-A Humidus Rivus tem como objetivo reduzir o consumo de água em ambientes empresariais por meio da reutilização da água da chuva e outras fontes alternativas.
- 
-Este é um projeto desenvolvido Grupo <b>Humidus Rivus</b> como sequencia de estudos da disciplina de <b>Pesquisa e Inovação</b> do curso de ADS da São Paulo Tech School (SPTECH).
+Este é um projeto desenvolvido Grupo <b>Humidus Solutions</b> como sequencia de estudos da disciplina de <b>Pesquisa e Inovação</b> do curso de ADS da São Paulo Tech School (SPTECH).
 
-**Rivus** é o nome do nosso sistema de reutilização de água com sensores de bloqueio para ajudar as empresas a economizar água e, consequentemente, reduzir as despesas com água e esgoto. Os sensores serão programados para desligar a água automaticamente após um determinado período de tempo e detectar a presença ou ausência de água no tanque.
+## ![Rivus](https://github.com/Humidus-Solutions/RIVUS-Website)
 
-### `Rivus Website`
+**Rivus** é o nome do nosso sistema de captação e reutilização de água da chuva para ajudar as empresas a fazer uso sustentável da água e, consequentemente, reduzir as despesas com água e esgoto.
+
+O projeto Rivus propõe a instalação de um sistema de monitoramento e captação de água da chuva para reuso, armazenando e distribuindo a mesma em uma cisterna, reduzindo o consumo de água potável. Os sensores tem a função de detectar a presença ou ausência de água no tanque e podem ser programados para liberar ou bloqueiar a passagem de água automaticamente após um determinado período de tempo.
+
+
+### Website
 Como testar:
 
 **1. Clone o repositório em sua máquina local usando o comando**: 
 ```
-git clone https://github.com/Humidus-Solutions/CalculadoraFinanceira.git
+git clone https://github.com/Humidus-Solutions/RIVUS-Website.git
 ```
 
 **2. Vá para o diretório do site**:
 ```
-cd nome_da_pasta
+cd site
 ```
     
 **3. Abre a página em seu navegador**:
 ```
-start simulador_financeiro.html
+start index.html
 ```
-
-<br>
 
 ## Tecnologias utilizadas
 **Design | UX/UI**:
  * HTML
  * CSS
- * Figma
-
+ * Bootstrap
+ * MySQL
+ * Arduino INO
+ * Componentes Eletrônicos: "TCRT5000, RESISTORES, JUMPER, PROTOBOARD"
+ 
 **Linguagens**:
  * JavaScript
-    
-<br>
+ * C++ 
+ 
+ **Banco de Dados**:
+ * MySQL
+ * Microsoft Azure SQL Database
+ 
+ **Bibliotecas**:
+  * Express.js
+  * Serialport
+  * MySQL
 
 ## Colaboradores
-<!--
-Template:
----------
-<a href="https://github.com/____" target="_blank" title="____">
-  <img src="https://github.com/____.png?size=40" height="40" width="40" alt="____" />
-</a>
-Instructions:
--------------
-1. Copy the template and paste it below.
-2. Replace the four "____" strings with the contributor's GitHub username.
-Note: I specified the avatars using HTML because, when I did so using Markdown,
-      only the _custom_ avatars appeared at the size I specified via the URL
-      (e.g. 40px squared, for `https://github.com/gitname.png?size=40`);
-      the GitHub-generated avatars seemed to ignore the size parameter and,
-      instead, appear at their full size (approximately 420px squared).
-      By using HTML, I can force _both_ types to appear at 40px squared.
--->
 
-<a href="https://github.com/danielvor" target="_blank" title="Daniel Rodrigues">
-<img src="https://github.com/danielvor.png?size=40" height="40" width="40" alt="Daniel Rodrigues" />
-</a>
-
-<a href="https://github.com/jhonathaGC" target="_blank" title="Jhonatha Carneiro">
-  <img src="https://github.com/jhonathaGC.png?size=40" height="40" width="40" alt="Jhonatha Carneiro" />
-</a>
-
-<a href="https://github.com/VictorBeralde" target="_blank" title="Victor Beralde">
-  <img src="https://github.com/VictorBeralde.png?size=40" height="40" width="40" alt="Victor Beralde" />
-</a>
-
-<a href="https://github.com/erickNA2" target="_blank" title="Erick Araújo">
-  <img src="https://github.com/erickNA2.png?size=40" height="40" width="40" alt="Erick Araújo" />
-</a>
-
-<a href="https://github.com/raquelmiyy" target="_blank" title="Raquel Guimarães">
-  <img src="https://github.com/raquelmiyy.png?size=40" height="40" width="40" alt="Raquel Guimarães" />
-</a>
-
-<a href="https://github.com/Gabriel-N-Freitas" target="_blank" title="Gabriel Freitas">
-  <img src="https://github.com/Gabriel-N-Freitas.png?size=40" height="40" width="40" alt="Gabriel Freitas" />
-</a>
-
+<table style="padding:6px"><tr>
+    <td align=center width=134px><a href="https://github.com/Gabriel-N-Freitas"><img src="https://github.com/Gabriel-N-Freitas.png" alt="Gabriel Freitas" width=122px><sub><br/>Gabriel Freitas</sub></a></td>
+     <td align=center width=134px><a href="https://github.com/raquelmiyy"><img src="https://github.com/raquelmiyy.png" alt="Raquel Guimarães" width=122px><sub><br/>Raquel Guimarães</sub></a></td>
+    <td align=center width=134px><a href="https://github.com/jhonathaGC"><img src="https://github.com/jhonathaGC.png" alt="Jhonatha Carneiro" width=122px><sub><br/>Jhonatha Carneiro</sub></a></td>
+    <td align=center width=134px><a href="https://github.com/VictorBeralde"><img src="https://github.com/VictorBeralde.png" alt="Victor Beralde" width=122px><sub><br/>Victor Beralde</sub></a></td>
+    <td align=center width=134px><a href="https://github.com/erickNA2"><img src="https://github.com/erickNA2.png" alt="Erick Araújo" width=122px><sub><br/><br/>Erick Araújo</sub></a></td>
+    <td align=center width=134px><a href="https://github.com/danielvor"><img src="https://github.com/danielvor.png" alt="Daniel Rodrigues" width=122px><sub><br/>Daniel Rodrigues</sub></a></td>
+  </tr><tr></tr><tr>
+</tr></table>
 
 ## Agradecimentos
 
-### Agradecemos a São Paulo Tech School por tornar tudo isso possível. 
-
+Agradecemos a São Paulo Tech School por tornar tudo isso possível. 
 
 ## Licença
 
 [MIT](LICENSE) © 2023 Humidus Solutions 
+
