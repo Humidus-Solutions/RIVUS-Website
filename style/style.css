@@ -1,0 +1,580 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.img-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 4;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, p, li:hover {
+    cursor: default;
+}
+
+.high-light {
+    color: #7eadc1;
+}
+
+.menu {
+    position: fixed;
+    right: 80px;
+    top: 40px;
+    width: auto;
+    height: auto;
+    z-index: 99;
+}
+
+.menu:hover {
+    cursor: pointer;
+}
+
+.menu div {
+    width: 32px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    margin-bottom: 8px;
+    transition: all .2s ease-in-out;
+}
+
+.menu-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: gray;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 80px;
+    z-index: 90;
+}
+
+.menu-screen ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: auto;
+    height: 380px;
+}
+
+.menu-screen ul li a {
+    color: black;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: 400;
+    font-family: 'Playfair Display';
+    color: rgba(0, 0, 0, 0.9);
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+    background: #000;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #0a0a0f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    scroll-behavior: smooth;
+}
+
+.line {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.line1 {
+    left: 3.854166667%;
+}
+
+.line2 {
+    left: 21.875%;
+}
+
+.line3 {
+    left: 40.625%;
+}
+
+.line4 {
+    left: 59.375%;
+}
+
+.line5 {
+    left: 78.125%;
+}
+
+.line6 {
+    left: 96.09375%;
+}
+
+.nav {
+    position: relative;
+    width: 100%;
+    height: 148px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav .logo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.nav .logo h1 {
+    position: relative;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: 'Manrope';
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.nav .logo h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #7eadc1ea;
+}
+
+.nav .logo .img-container {
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+.nav .logo .img-container img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hero {
+    position: relative;
+    width: 66%;
+    height: 680px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero .img1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320;
+    height: 320px;
+}
+
+.hero .img1 img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hero .img2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 320;
+    height: 320px;
+}
+
+.hero .img2 img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hero h1 {
+    position: relative;
+    width: 680px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    text-transform: uppercase;
+    font-weight: 400;
+    z-index: 8;
+}
+
+.about {
+    position: relative;
+    width: 66%;
+    height: 980px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.about .img1 {
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    width: 380px;
+    height: 280px;
+}
+
+.about .img1 img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about h1 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.about .text {
+    position: relative;
+    width: 100%;
+}
+
+.about .text h2 {
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: 400;
+    font-family: 'Playfair Display';
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.about .text p {
+    position: absolute;
+    right: 40px;
+    width: 390px;
+    height: auto;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.calculadora {
+    position: relative;
+    width: 66%;
+    height: 868px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+
+.calculadora h1 {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.calculadora .text1 {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.calculadora .text1 h1 {
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: 400;
+    font-family: 'Playfair Display';
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.calculadora .text {
+    position: relative;
+    height: 288px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.calculadora .text p {
+    width: 348px;
+    height: auto;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.calculadora .text .btn {
+    position: relative;
+    width: auto;
+    height: auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.calculadora .text .btn:hover {
+    cursor: pointer;
+}
+
+.calculadora .text .btn:hover::before {
+    width: 100%;
+}
+
+.calculadora .text .btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 33%;
+    height: 1px;
+    background-color: #7eadc1ea;
+    transition: all .4s ease-in-out;
+}
+
+.img-section {
+    position: relative;
+    width: 100%;
+    height: 488px;
+    overflow: hidden;
+}
+
+.img-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    height: 388px;
+    background: #000;
+}
+
+.footer .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.footer .container .box1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.footer .container .box1 .logo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 128px;
+}
+
+.footer .container .box1 .logo h1 {
+    position: relative;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: 'Manrope';
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer .container .box1 .logo h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #7eadc1ea;
+}
+
+.footer .container .box1 .logo .img-container {
+    position: relative;
+    width: 38px;
+    height: 38px;
+}
+
+.footer .container .box1 .logo .img-container img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.footer .container .box1 p {
+    color: white;
+    font-size: 14px;
+    font-family: 'Manrope';
+    font-weight: 300;
+    text-align: left;
+}
+
+.footer .container .box2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.footer .container .box2 .explore {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-evenly;
+    height: 228px;
+}
+
+.footer .container .box2 .explore .title {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.footer .container .box2 .explore li a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    text-transform: capitalize;
+    transition: all .2s ease-in-out;
+}
+
+.footer .container .box2 .explore li a:hover {
+    color: #7eadc1;
+}
+
+.footer .container .box2 .social {
+    list-style: none;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    width: 128px;
+}
+
+.footer .container .box2 .social li a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    text-transform: capitalize;
+    transition: all .2s ease-in-out;
+}
+
+.footer .container .box2 .social li a:hover {
+    color: #7eadc1;
+}
+
+.footer .container .box3 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.footer .container .box3 .contact-info {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-evenly;
+    height: 228px;
+}
+
+.footer .container .box3 .contact-info .title {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.footer .container .box3 .contact-info li {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    text-transform: capitalize;
+}
