@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Humidus Rivus</title>
+    <link rel="icon" href="./assets/logo.png">
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-    <div class="menu">
+    <div class="menu" onclick="change()">
         <div></div>
         <div></div>
         <div></div>
     </div>
 
-    <div class="menu-screen">
+    <div class="menu-screen" id="hbMenu">
         <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Calculadora</a></li>
-            <li><a href="">Perfil</a></li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./pages/Calculadora/calculadora.html">Calculadora</a></li>
+            <li><a href="./pages/Login & Cadastro/login.html">Perfil</a></li>
             <li><a href="">Dashboard</a></li>
         </ul>
     </div>
@@ -135,7 +136,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">Sobre</a></li>
                         <li><a href="#calc">Finanças</a></li>
-                        <li><a href="">Contato</a></li>
+                        <li><a href="">Perfil</a></li>
                     </ul>
                     <ul class="social">
                         <li><a href="">Login</a></li>
@@ -157,3 +158,12 @@
     </div>
 </body>
 </html>
+
+<script>
+    var hbMenu = document.getElementById('hbMenu')
+
+    function change() {
+        
+        hbMenu.classList.toggle("active");
+    }
+</script>
