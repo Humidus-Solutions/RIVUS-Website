@@ -44,23 +44,30 @@ h1, h2, p, li:hover {
 .menu div {
     width: 32px;
     height: 2px;
-    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: invert(80%);
+    background: rgba(255, 255, 255, 0.1);
     margin-bottom: 8px;
     transition: all .2s ease-in-out;
 }
 
-.menu-screen {
+.menu-screen{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: gray;
+    background: #fcfcff;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: 80px;
     z-index: 90;
+    transform: translateX(100%);
+    transition: all .6s ease-in-out;
+}
+
+.active {
+    transform: translateX(0)
 }
 
 .menu-screen ul {
@@ -73,6 +80,10 @@ h1, h2, p, li:hover {
     height: 380px;
 }
 
+.menu-screen ul li {
+    position: relative;
+}
+
 .menu-screen ul li a {
     color: black;
     text-align: left;
@@ -80,7 +91,23 @@ h1, h2, p, li:hover {
     font-size: 42px;
     font-weight: 400;
     font-family: 'Playfair Display';
-    color: rgba(0, 0, 0, 0.9);
+    transition: all .42s ease-in-out;
+}
+
+.menu-screen ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: black;
+    z-index: 91;
+    transition: all .42s ease-in-out;
+}
+
+.menu-screen ul li a:hover::after {
+    width: 100%;
 }
 
 body {
@@ -374,10 +401,12 @@ body {
     font-weight: 300;
     font-family: 'Manrope';
     color: rgba(255, 255, 255, 0.9);
+    transition: all .42s ease-in-out;
 }
 
 .calculadora .text .btn:hover {
     cursor: pointer;
+    color: #7eadc1;
 }
 
 .calculadora .text .btn:hover::before {
@@ -392,7 +421,7 @@ body {
     width: 33%;
     height: 1px;
     background-color: #7eadc1ea;
-    transition: all .4s ease-in-out;
+    transition: all .42s ease-in-out;
 }
 
 .img-section {
@@ -516,7 +545,7 @@ body {
     font-weight: 300;
     font-family: 'Manrope';
     text-transform: capitalize;
-    transition: all .2s ease-in-out;
+    transition: all .42s ease-in-out;
 }
 
 .footer .container .box2 .explore li a:hover {
@@ -538,7 +567,7 @@ body {
     font-weight: 300;
     font-family: 'Manrope';
     text-transform: capitalize;
-    transition: all .2s ease-in-out;
+    transition: all .42s ease-in-out;
 }
 
 .footer .container .box2 .social li a:hover {
