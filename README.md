@@ -25,13 +25,8 @@ No terminal, de um diretório específico:
 ```
 git clone https://github.com/Humidus-Solutions/RIVUS-Website.git
 ```
-
-**2. Vá para o diretório do site**:
-```
-cd site/public/
-```
     
-**3. Abre a página em seu navegador**:
+**2. Use o comando**:
 ```
 start index.html
 ```
@@ -40,14 +35,15 @@ start index.html
 **Design | UX/UI**:
  * HTML
  * CSS
- * Bootstrap
- * MySQL
- * Arduino INO
+ * Font awesome
  * Componentes Eletrônicos: "TCRT5000, RESISTORES, JUMPER, PROTOBOARD"
  
 **Linguagens**:
  * JavaScript
  * C++ 
+
+**Arduino**:
+ * Componentes Eletrônicos: "TCRT5000, RESISTORES, JUMPER, PROTOBOARD"
  
  **Banco de Dados**:
  * MySQL
