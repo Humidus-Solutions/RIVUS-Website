@@ -122,18 +122,18 @@
 
   
   function cadastrar() {
-    var empresa = document.getElementById('empresa').value;
-    var cnpj = document.getElementById('number').value;
-    var email = document.getElementById('email').value;
-    var senha = document.getElementById('password').value;
-    var confirmarSenha = document.getElementById('passconfirmation').value;
-    var termos = document.getElementById('agreement').value;
+    var empresa = empresa.value;
+    var cnpj = number.value;
+    var email = email.value;
+    var senha = password.value;
+    var confirmarSenha = passconfirmation.value;
+    var termos = agreement.value;
 
     if (empresa == "" || cnpj == "" || email == "" || senha == "" || confirmarSenha == "" || termos == "") {
       alert("Preencha todos os campos!");
     } else {
       alert("Cadastro realizado com sucesso!");
-      window.location.href = "login.html";
+      window.location.href = "./login.html";
     }
   }
   
