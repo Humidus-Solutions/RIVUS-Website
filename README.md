@@ -1,22 +1,27 @@
-<!-- # [Rivus](https://github.com/Humidus-Solutions/)-->
-![Rivus](https://github.com/Humidus-Solutions/RIVUS-Website/blob/main/site/public/assets/img/humidus-banner.jpg)
-### `Sobre Nós`
+*São Paulo Tech School - `Pesquisa e Inovação` - [Humidus Solitons](https://github.com/Humidus-Solutions/)*
 
-A Humidus Rivus é uma empresa que visa reduzir o consumo de água em ambientes empresariais por meio da captação, tratamento e reutilização da água da chuva.
+# 
 
-Este é um projeto desenvolvido Grupo <b>Humidus Solutions</b> como sequencia de estudos da disciplina de <b>Pesquisa e Inovação</b> do curso de ADS da São Paulo Tech School (SPTECH).
+### Sobre Nós
 
-## ![Rivus](https://github.com/Humidus-Solutions/RIVUS-Website)
+A Humidus Solutions é uma empresa que visa reduzir o consumo de água em ambientes empresariais por meio da captação, tratamento e reutilização da água da chuva.
+Este é um projeto desenvolvido Grupo Humidus Solutions como sequencia de estudos da disciplina de Pesquisa e Inovação do curso de ADS da São Paulo Tech School (SPTECH).
 
-**Rivus** é o nome do nosso sistema de captação e reutilização de água da chuva para ajudar as empresas a fazer uso sustentável da água e, consequentemente, reduzir as despesas com água e esgoto.
+#
 
-O projeto Rivus propõe a instalação de um sistema de monitoramento e captação de água da chuva para reuso, armazenando e distribuindo a mesma em uma cisterna, reduzindo o consumo de água potável. Os sensores tem a função de detectar a presença ou ausência de água no tanque e podem ser programados para liberar ou bloqueiar a passagem de água automaticamente após um determinado período de tempo.
+### Projeto
+
+[Rivus](https://github.com/Humidus-Solutions/RIVUS-Website) é o nome da nossa solução que tem como alvo fazer reutilização d'água da chuva, visando empresas a fazer uso sustentável de água e, consequentemente, reduzir as despesas com água e esgoto.
+
+O projeto Rivus propõe a instalação de um sistema de monitoramento e captação de água da chuva para reuso, armazenando e distribuindo a mesma em uma cisterna, reduzindo o consumo de água potável. Os sensores tem a função de detectar a presença ou ausência de água na cisterma.
+
+#
 
 
-### Website
-Como testar:
+## Teste local
+No terminal, de um diretório específico:
 
-**1. Clone o repositório em sua máquina local usando o comando**: 
+**1. Clone o repositório localmente usando o comando**: 
 ```
 git clone https://github.com/Humidus-Solutions/RIVUS-Website.git
 ```
