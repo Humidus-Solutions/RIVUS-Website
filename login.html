@@ -97,9 +97,16 @@
   var senha= input_senha.value;
   senha=senha.toLowerCase();
   if (email=="admin@admin.com" && senha=="admin") {
-    window.location="/pages/Dashboard/dashboard.html";
+    window.location="./pages/Dashboard/dashboard.html";
     validado=true;
   }
   if (validado==false) { alert("Dados incorretos, tente novamente"); }
 }
+
+var hbMenu = document.getElementById('hbMenu')
+
+  function change() {
+
+    hbMenu.classList.toggle("active");
+  }
 </script>
