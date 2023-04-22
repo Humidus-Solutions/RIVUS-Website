@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="icon" href="./assets/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="./pages/Login & Cadastro/login.css" />
+</head>
+
+<body>
+
+  
+
+  <div class="main">
+
+    <div class="menu" onclick="change()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  
+    <div class="menu-screen" id="hbMenu">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./pages/Calculadora/calculadora.html">Calculadora</a></li>
+        <li><a href="./login.html">Perfil</a></li>
+        <li><a href="./cadastro.html">Cadastrar - se</a></li>
+        <li><a href="./pages/Dashboard/dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+    
+    <div id="login-container">
+      <h1 id="humidos">Humidos</h1>
+      <br />
+
+      <h2>Login</h2>
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="input_email" placeholder="Digite o seu E-mail" autocomplete="off" />
+        <label for="senha">Senha</label>
+        <input type="password" name="password" id="input_senha" placeholder="Digite a sua senha" />
+        <a href="#" id="forgot-pass">Esqueceu a senha?</a>
+        <input type="submit" onclick="validacao()"/>     
+      <div id="register-container">
+        <p>Ainda não tem uma conta?</p>
+        <a href="./cadastro.html">Registrar</a>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="box1">
+          <div class="logo">
+            <h1>Humidus Rivus</h1>
+            <div class="img-container">
+              <img src="./assets/logo.png" alt="">
+            </div>
+          </div>  
+
+          <p>c.2023 Humidus Rivus, all rights reserved.</p>
+        </div>
+
+        <div class="box2">
+          <ul class="explore">
+            <li class="title">Explore</li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#calc">Finanças</a></li>
+            <li><a href="">Perfil</a></li>
+          </ul>
+          
+        </div>
+
+        <div class="box3">
+          <ul class="contact-info">
+            <li class="title">Contate</li>
+            <li>Rua Haddock Lobo, nº 834 </li>
+            <li>Jardins, SP, 01414-000</li>
+            <li>+55 (11)99788-1987</li>
+            <li>rivus_humidus@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script>
+ function validacao() {
+  var validado=false;
+
+  var email = input_email.value;
+  email=email.toLowerCase();
+  var senha= input_senha.value;
+  senha=senha.toLowerCase();
+  if (email=="admin@admin.com" && senha=="admin") {
+    window.location="./pages/Dashboard/dashboard.html";
+    validado=true;
+  }
+  if (validado==false) { alert("Dados incorretos, tente novamente"); }
+}
+
+var hbMenu = document.getElementById('hbMenu')
+
+  function change() {
+
+    hbMenu.classList.toggle("active");
+  }
+</script>
