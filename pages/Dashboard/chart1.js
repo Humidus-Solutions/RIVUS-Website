@@ -1,43 +1,31 @@
 const ctx = document.getElementById('lineChart').getContext('2d');
 
 const lineChart = new Chart(ctx, {
-    type: 'line',
+    type: 'bar',
     data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         datasets: [{
-            label: 'Earned Points',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            label: 'Água Consumida',
+            data: [15000, 13000, 10000, 12000, 12000, 13000, 14500, 15000, 13000, 15000, 12000, 12000],
             backgroundColor: [
-                'rgba(255, 206, 86, 0.2)',
+                'blue',
             ],
             borderColor: [
-                'rgba(54, 162, 235, 1)'
+                'black'
             ],
             borderWidth: 1
 
         },
         {
-            label: 'Earned Points',
-            data: [10, 110, 15, 12, 120, 130, 145],
+            label: 'Água Reutilizada',
+            data: [7500, 6500, 5000, 6000, 6000, 6500, 7250,7500, 6500, 6000, 6000, 6000],
             backgroundColor: [
-                'rgba(75, 192, 192, 0.2)',
+                'red',
             ],
             borderColor: [
                 
-                'rgba(75, 192, 192, 1)',
+                'black',
                 
-            ],
-            borderWidth: 1
-
-        },
-        {
-            label: 'Earned Points',
-            data: [110, 110, 115, 112, 20, 30, 45],
-            backgroundColor: [
-                'rgba(75, 192, 192, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)'
             ],
             borderWidth: 1
 
