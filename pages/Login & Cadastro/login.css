@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&display=swap');
+
+
 /*Gerais*/
 
 *{
@@ -15,6 +19,7 @@ body{
     
 }
 
+
 textarea:focus, input:focus{
     outline: none;
 
@@ -31,84 +36,312 @@ a:hover{
 }
 
 /*Barrra navegação*/
-
 .nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 518px;
-    height: 62px;
+    position: relative;
+    width: 100%;
+    height: 148px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding-left: 32px;
-    z-index: 10;
+    justify-content: center;
 }
 
-.nav::before {
+.nav .logo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.nav .logo h1 {
+    position: relative;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: 'Manrope';
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.nav .logo h1::after {
     content: '';
     position: absolute;
-    bottom: 0;
     left: 0;
+    bottom: 0;
     width: 100%;
     height: 1px;
-    background-color: 
-    black;
+    background-color: #7eadc1ea;
 }
 
-.nav::after {
+.nav .logo .img-container {
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+.nav .logo .img-container img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.menu {
+    position: fixed;
+    right: 80px;
+    top: 40px;
+    width: auto;
+    height: auto;
+    z-index: 99;
+}
+
+.menu:hover {
+    cursor: pointer;
+}
+
+.menu div {
+    width: 32px;
+    height: 2px;
+    backdrop-filter: invert(80%);
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 8px;
+    transition: all .2s ease-in-out;
+}
+
+.menu-screen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fcfcff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 80px;
+    z-index: 90;
+    transform: translateX(100%);
+    transition:all .6s ease-in-out;
+}
+
+.active {
+    transform: translateX(0)
+}
+
+.menu-screen ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: auto;
+    height: 380px;
+}
+
+.menu-screen ul li {
+    position: relative;
+}
+
+.menu-screen ul li a {
+    color: black;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: 400;
+    font-family: 'Playfair Display';
+    transition: all .42s ease-in-out;
+}
+
+.menu-screen ul li a::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 1px;
-    height: 100%;
-    background-color: 
-    black;
+    width: 30px;
+    height: 2px;
+    background: black;
+    z-index: 91;
+    transition: all .42s ease-in-out;
+}
+
+.menu-screen ul li a:hover::after {
+    width: 100%;
 }
 
 
-.nav .links {
-    list-style: none;
+
+-FOOTER
+
+
+
+.footer {
     position: relative;
-    width: 60%;
+    width: 100%;
+    height: 388px;
+    background: #000;
+}
+
+.footer .container {
+    position: relative;
+    width: 100%;
     height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.footer .container .box1 {
+    position: relative;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.footer .container .box1 .logo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    height: 128px;
 }
 
-.nav .links::before {
+.footer .container .box1 .logo h1 {
+    position: relative;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: 'Manrope';
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer .container .box1 .logo h1::after {
     content: '';
     position: absolute;
+    left: 0;
     bottom: 0;
-    right: 0;
-    width: 1px;
-    height: 100%;
-    background-color: 
-    black;
+    width: 100%;
+    height: 1px;
+    background-color: #7eadc1ea;
 }
 
-.nav .links li a {
-    color: black;
-    font-size: 15px;
-    font-weight: 300;
-}
-
-.nav .login {
-    list-style: none;
+.footer .container .box1 .logo .img-container {
     position: relative;
-    width: 40%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    width: 38px;
+    height: 38px;
 }
 
-.nav .login li a {
-    color: black;
+.footer .container .box1 .logo .img-container img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.footer .container .box1 p {
+    color: white;
+    font-size: 14px;
+    font-family: 'Manrope';
+    font-weight: 300;
+    text-align: left;
+}
+
+.footer .container .box2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.footer .container .box2 .explore {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-evenly;
+    height: 228px;
+}
+
+.footer .container .box2 .explore .title {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.footer .container .box2 .explore li a {
+    color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
     font-weight: 300;
+    font-family: 'Manrope';
+    text-transform: capitalize;
+    transition: all .42s ease-in-out;
+}
+
+.footer .container .box2 .explore li a:hover {
+    color: #7eadc1;
+}
+
+.footer .container .box2 .social {
+    list-style: none;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    width: 128px;
+}
+
+.footer .container .box2 .social li a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    text-transform: capitalize;
+    transition: all .42s ease-in-out;
+}
+
+.footer .container .box2 .social li a:hover {
+    color: #7eadc1;
+}
+
+.footer .container .box3 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.footer .container .box3 .contact-info {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-evenly;
+    height: 228px;
+}
+
+.footer .container .box3 .contact-info .title {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.footer .container .box3 .contact-info li {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    text-transform: capitalize;
 }
 
 /*container login*/
@@ -118,12 +351,12 @@ a:hover{
 }
 
 #login-container{
-    background-color: #fff;
+    background-color: #7AE7FF80;
     width: 400px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px 30px;
+    padding: 10px 20px;
     margin-top: 10vh;
     border-radius: 10px;
     text-align: center;
@@ -181,38 +414,6 @@ input[type="submit"]:hover{
 background-color: rgb(0, 0, 75);
 transition: .5s;
 }
-
-/*redes sociais*/
-
-#social-container{
-    margin-bottom: 20px;
-}
-
-/*redes sociais*/
-
-#social-container, #social-container p {
-    margin-bottom: 20px;
-
-}
-/*ajustando os icones de rede social*/
-#social-container i {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    line-height: 40px;
-    color: white;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.fa-facebook-f{
-    background-color: #3b5998;
-}
-
-.fa-linkedin{
-    background-color: #89a4de;
-}
-
 
 /*register*/
 
