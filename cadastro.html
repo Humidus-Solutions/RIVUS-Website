@@ -22,8 +22,13 @@
     <ul>
       <li><a href="./index.html">Home</a></li>
       <li><a href="./pages/Calculadora/calculadora.html">Calculadora</a></li>
+<<<<<<< HEAD
       <li><a href="login.html">Perfil</a></li>
       <li><a href="cadastro.html">Cadastrar - se</a></li>
+=======
+      <li><a href="./login.html">Perfil</a></li>
+      <li><a href="./cadastro.html">Cadastrar - se</a></li>
+>>>>>>> e951122a33e57bc057bdffa24d52c5dd5e34aa10
       <li><a href="./pages/Dashboard/dashboard.html">Dashboard</a></li>
     </ul>
   </div>
@@ -32,8 +37,6 @@
 
     <div id="main-container">
       <h1>Cadastre-se</h1>
-      <form id="register-form">
-
         <div class="full-box">
           <label for="email">Empresa</label>
           <input type="text" name="empresa" id="empresa" placeholder="Digite o nome da empresa" data-min-length="3"
@@ -69,15 +72,11 @@
         </div>
 
         <div class="full-box">
-          <input type="submit" id="btn-submit" value="Registrar" />
-
-         
+          <input type="submit" id="btn-submit" value="Registrar" onclick="cadastrar()"/>        
 
         </div>
-      </form>
     </div>
     <p class="error-validation template"></p>
-    <script src="./js/scripts.js"></script>
 
     <!-- FOOTER -->
 
@@ -118,9 +117,26 @@
     </div>
   </div>
 </body>
-
 </html>
 <script>
+
+  
+  function cadastrar() {
+    var empresa = document.getElementById('empresa').value;
+    var cnpj = document.getElementById('number').value;
+    var email = document.getElementById('email').value;
+    var senha = document.getElementById('password').value;
+    var confirmarSenha = document.getElementById('passconfirmation').value;
+    var termos = document.getElementById('agreement').value;
+
+    if (empresa == "" || cnpj == "" || email == "" || senha == "" || confirmarSenha == "" || termos == "") {
+      alert("Preencha todos os campos!");
+    } else {
+      alert("Cadastro realizado com sucesso!");
+      window.location.href = "login.html";
+    }
+  }
+  
   var hbMenu = document.getElementById('hbMenu')
 
   function change() {

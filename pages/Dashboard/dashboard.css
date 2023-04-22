@@ -202,7 +202,14 @@
 
 .chart {
     background: #fff;
-    padding: 20px;
+    padding: 35px 20px;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px 0 rgba(0,0,0,0.08);
+    width: 100%;
+}
+#doughnut-chart.chart {
+    background: #fff;
+    padding: 35px 20px;
     border-radius: 10px;
     box-shadow: 0 7px 25px 0 rgba(0,0,0,0.08);
     width: 100%;

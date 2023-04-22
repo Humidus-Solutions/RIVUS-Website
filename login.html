@@ -27,9 +27,9 @@
       <ul>
         <li><a href="./index.html">Home</a></li>
         <li><a href="./pages/Calculadora/calculadora.html">Calculadora</a></li>
-        <li><a href="login.html">Perfil</a></li>
-        <li><a href="cadastro.html">Cadastrar - se</a></li>
-        <li><a href="">Dashboard</a></li>
+        <li><a href="./login.html">Perfil</a></li>
+        <li><a href="./cadastro.html">Cadastrar - se</a></li>
+        <li><a href="./pages/Dashboard/dashboard.html">Dashboard</a></li>
       </ul>
     </div>
     
@@ -38,15 +38,12 @@
       <br />
 
       <h2>Login</h2>
-      <form action="">
         <label for="email">E-mail</label>
-        <input type="email" name="email" id="usuario" placeholder="Digite o seu E-mail" autocomplete="off" />
+        <input type="email" name="email" id="input_email" placeholder="Digite o seu E-mail" autocomplete="off" />
         <label for="senha">Senha</label>
-        <input type="password" name="password" id="password" placeholder="Digite a sua senha" />
+        <input type="password" name="password" id="input_senha" placeholder="Digite a sua senha" />
         <a href="#" id="forgot-pass">Esqueceu a senha?</a>
-        <input type="submit" value="Login"  onclick="logar()"/>
-      </form>
-     
+        <input type="submit" onclick="validacao()"/>     
       <div id="register-container">
         <p>Ainda não tem uma conta?</p>
         <a href="./cadastro.html">Registrar</a>
@@ -92,20 +89,17 @@
 
 </html>
 <script>
-  var hbMenu = document.getElementById('hbMenu')
+ function validacao() {
+  var validado=false;
 
-  function change() {
-      
-      hbMenu.classList.toggle("active");
+  var email = input_email.value;
+  email=email.toLowerCase();
+  var senha= input_senha.value;
+  senha=senha.toLowerCase();
+  if (email=="admin@admin.com" && senha=="admin") {
+    window.location="/pages/Dashboard/dashboard.html";
+    validado=true;
   }
-  function logar(){
-    var user = usuario.value
-    var senha = password.value
-    var validado= user == "admin@admin.com" && senha == "1234"
-    
-    if(validado){
-    window.location.href("./pages/Dashboard/dashboard.html")
-    }
-
-  }
+  if (validado==false) { alert("Dados incorretos, tente novamente"); }
+}
 </script>
