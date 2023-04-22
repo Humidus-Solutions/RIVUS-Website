@@ -1,0 +1,662 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Comfortaa:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap');
+
+/* font-family: 'Cinzel Decorative', cursive;
+font-family: 'Comfortaa', cursive; 
+font-family: 'Lora', serif;*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 518px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 32px;
+    z-index: 10;
+}
+
+.nav::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color:
+        #dce0eb;
+}
+
+.nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-color:
+        #dce0eb;
+}
+
+
+.nav .links {
+    list-style: none;
+    position: relative;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav .links::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color:
+        #dce0eb;
+}
+
+.nav .links li {
+    width: auto;
+    height: auto;
+    position: relative;
+}
+
+.nav .links li a {
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+    width: auto;
+    height: auto;
+    letter-spacing: 0px;
+    transition: 0.25s ease-out;
+    font-family: Roboto;
+}
+
+.nav .links li a:hover {
+    letter-spacing: 0.8px;
+    transition: 0.25s ease-out;
+}
+
+.nav .links li::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #dce0eb;
+    transition: transform 0.25s ease-out;
+}
+
+.nav .links li:hover::before {
+    transform: scaleX(1);
+}
+
+.nav .login {
+    list-style: none;
+    position: relative;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav .login li {
+    position: relative;
+}
+
+.nav .login li a {
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    position: relative;
+    font-family: Roboto;
+}
+
+.nav .login li a:hover {
+    letter-spacing: 0.8px;
+    transition: 0.25s ease-out;
+}
+
+.nav .login li::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #dce0eb;
+    transition: transform 0.25s ease-out;
+}
+
+.nav .login li:hover::before {
+    transform: scaleX(1);
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('../assets/hero-bg.jpg');
+    background-size: cover;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: white;
+    z-index: 80;
+}
+
+.hero .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9;
+}
+
+.hero .container {
+    position: absolute;
+    top: 6%;
+    left: 8%;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 11;
+}
+
+.hero .container .img-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.hero .container h1 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 82px;
+    font-family: Cinzel Decorative;
+    font-weight: 400;
+    text-align: center;
+}
+
+.hero .container .img-container img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hero .text {
+    position: absolute;
+    right: 8%;
+    bottom: 12%;
+    width: 488px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+    z-index: 11;
+}
+
+.hero .text h2 {
+    color: white;
+    font-size: 44px;
+    text-align: left;
+    font-family: Lora, Arial;
+    font-weight: 300;
+}
+
+.hero .text span {
+    color: #7eadc1;
+}
+
+.hero .text .btn {
+    position: relative;
+    width: 98px;
+    height: 38px;
+    border-top-left-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    background-color: #193543;
+    color: white;
+    font-size: 12px;
+    margin-top: 20px;
+    transition: 0.25s ease-out;
+    font-family: Roboto;
+}
+
+.hero .text .btn:hover {
+    background-color: #0d1f27;
+    transition: 0.25s ease-out;
+    cursor: pointer;
+}
+
+.about {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.about::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: white;
+}
+
+.about .stripes1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.about .stripes2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.about  .line1 {
+    width: 60%;
+    height: 1px;
+    background-color: white;
+
+}
+
+.about  .line2 {
+    width: 40%;
+    height: 1px;
+    background-color: #fff;
+    
+}
+
+.about .line3 {
+    width: 20%;
+    height: 1px;
+    background-color: #fff;
+    
+}
+
+.about .title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: rgba(0, 0, 0, 0.9);
+    padding-left: 80px;
+}
+
+.about .title::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 80%;
+    background-color: #fff;
+}
+
+.about .title::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    height: 1px;
+    background-color: #fff;
+}
+
+.about .title h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: 400;
+    font-family: Lora, Arial;
+}
+
+.about .text {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: rgba(0, 0, 0, 0.9);
+    padding-left: 80px;
+}
+
+.about .text::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 1px;
+    background-color: #fff;
+}
+
+.about .text::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 80%;
+    background-color: #fff;
+}
+
+.about .text p {
+    width: 380px;
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: left;
+    font-family: Roboto;
+}
+
+.objectives {
+    position: relative;
+    width: 100%;
+    height: 888px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.objectives .dec1::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    height: 1px;
+    background: white;
+} 
+
+.objectives .dec2::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    height: 1px;
+    background: white;
+} 
+
+.objectives .dec3::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    height: 1px;
+    background: white;
+} 
+
+.objectives .box {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px ;
+}
+
+.objectives .box .icon {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.objectives .box img {
+    position: relative;
+    width: 112px;
+    height: 112px;
+
+}
+
+.objectives .box h1 {
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    font-weight: 400;
+    font-family: Lora, Arial;
+}
+
+.objectives .box p {
+    width: 368px;
+    color: white;
+    font-size: 14px;
+    text-align: left;
+    font-weight: 300;
+    font-family: Roboto;
+}
+
+.calc {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+}
+
+.contact::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+}
+
+.contact .container1 {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.contact .container1::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: black;
+    width: 1px;
+    height: 100%;
+
+}
+
+.contact .container1 h1 {
+    font-size: 48px;
+    text-align: center;
+    font-weight: 400;
+    font-family: Lora, Arial;
+    color: white;
+}
+
+.contact a {
+    color: white;
+}
+
+.contact .container1 .social {
+    position: absolute;
+    left: 8%;
+    bottom: 8%;
+    list-style: none;
+    width: 280px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: Roboto;
+    text-align: center;
+}
+
+.contact .container1 .social li {
+    position: relative;
+}
+
+.contact .container1 .social li a {
+    position: relative;
+}
+
+.contact .container1 .social li::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transition: transform 0.25s ease-out;
+}
+
+.contact .container1 .social li:hover::before {
+    transform: scaleX(1);
+}
+
+.contact .container2 {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact .container2 form {
+    position: relative;
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.contact .container2 form label {
+    color: black;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Roboto;
+}
+
+.contact .container2 form input {
+    position: relative;
+    width: 80%;
+    height: 68px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: left;
+    font-size: 12px;
+    font-weight: 300;
+    padding: 6px 6px;
+    font-family: Roboto;
+}
+
+.contact .container2 form textarea {
+    position: relative;
+    width: 80%;
+    height: 200px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: left;
+    font-size: 12px;
+    font-weight: 300;
+    padding: 6px 6px;
+    font-family: Roboto;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 44px;
+}
+
+.footer p {
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    font-family: Roboto;
+}
