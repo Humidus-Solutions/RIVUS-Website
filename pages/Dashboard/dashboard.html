@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Logo -->
+    <link
+      rel="shortcut icon"
+      href="../../assets/logo.png"
+      type="image/x-icon"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../pages/Dashboard/dashboard.css" />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/9f5bb96b53.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Admin Panel - Rivus</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="topbar">
+        <div class="logo">
+          <h2>Rivus</h2>
+        </div>
+        <div class="search">
+          <input type="" id="search" placeholder="search here" />
+          <label for="search"><i class="fas fa-search"></i></label>
+        </div>
+        <i class="fas fa-bell"></i>
+        <div class="user">
+          <img src="../../assets/team.jpg" alt="Perfil Team" />
+        </div>
+      </div>
+      <div class="sidebar">
+        <ul>
+          <li>
+            <a href="">
+              <i class="fas fa-th-large"></i>
+              <div>Dashboard</div>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fa-regular fa-clock"></i>
+              <div>Current Time</div>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fas fa-chart-bar"></i>
+              <div>Analytics</div>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fas fa-hand-holding-usd"></i>
+              <div>Earnings</div>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fas fa-cog"></i>
+              <div>Settings</div>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fas fa-question"></i>
+              <div>Help</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="main">
+        <div class="cards">
+          <div class="card">
+            <div class="card-content">
+              <div class="litros">1217 Litros</div>
+              <div class="card-name">Agua Reutilizada</div>
+            </div>
+            <div class="icon-box">
+              <i class="fa-solid fa-water"></i>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <div class="number">R$ 4.243,00</div>
+              <div class="card-name">Dinheiro Economizado</div>
+            </div>
+            <div class="icon-box">
+              <i class="fa-solid fa-sack-dollar"></i>
+            </div>
+          </div>
+          <div class="card-medio">
+            <div class="card-content">
+              <center>
+
+                <div id="openweathermap-widget-1"></div>
+              </center>
+            </div> 
+          </div>
+        </div>
+        <div class="charts">
+          <div class="chart">
+            <h2>Consumo de Água x Reutilização de Água</h2>
+            <canvas id="lineChart"></canvas>
+          </div>
+          <div class="chart" id="doughnut-chart">
+            <h2>Desempenho</h2>
+            <canvas id="doughnut"></canvas>
+          </div>
+          <div class="chart">
+            <h2>Qualidade da Água</h2>
+            <canvas id="lineChart2"></canvas>
+          </div>
+          <div class="chart">
+            <h2>Distribuição de Água</h2>
+            <canvas id="doughnut2"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+<script src="./chart1.js"></script>
+<script src="./chart2.js"></script>
+<script src="./chart3.js"></script>
+<script src="./chart4.js"></script>
+<script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script>
+<script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 1,cityid: '3448433',appid: '532aad7b12867ad192ab2ce5c0d88315',units: 'metric',containerid: 'openweathermap-widget-1',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
+
