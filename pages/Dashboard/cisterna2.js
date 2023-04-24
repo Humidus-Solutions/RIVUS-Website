@@ -1,12 +1,20 @@
 const ctx6 = document.getElementById('cisterna2');
 
 new Chart(ctx6, {
-    type: 'line',
+    type: 'bar',
     data: {
-      labels: ['Banheiro', 'Jardim', 'Cozinha', 'Escritórios'],
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
       datasets: [{
-        label: 'Distribuição de Água',
-        data: [60, 20, 15,5],
+        label: 'Litros',
+        data: [150, 200, 700,1500, 3000],
+
+        backgroundColor: [
+          '#5c6bc0',
+          '#9ccc65',
+          '#42a5f5',
+          '#ffee58',
+          '#ff7043'
+        ],
         borderWidth: 1
       }]
     },
