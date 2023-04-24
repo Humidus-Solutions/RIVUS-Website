@@ -138,8 +138,12 @@
       </div>
       <div class="charts-unico">
         <div class="chart-unico" id="plotar_grafico">
-          <h2>Consumo de Água x Reutilização de Água</h2>
-          <canvas id="ok_grafico"></canvas>          
+          <h2>Nível atual da Cisterna 1</h2>
+          <canvas id="cisterna1"></canvas>          
+        </div>
+        <div class="chart-unico" id="plotar_grafico">
+          <h2>Nível atual da Cisterna 2</h2>
+          <canvas id="cisterna2"></canvas>          
         </div>
       </div>
     </div>
@@ -155,39 +159,9 @@
 
 
     if(tipo == 1){
-
-      var ctx5 = document.getElementById('ok_grafico').getContext('2d');
-      window.ok_grafico = new Chart(ctx5, {
-        type: 'bar',
-        data: {
-          labels: ['Banheiro', 'Jardim', 'Cozinha', 'Escritórios'],
-      datasets: [{
-        label: 'Distribuição de Água',
-        data: [60, 20, 15,5],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      reponsive: true
-    }
-  });
+      window.ok_grafico = "cisterna1" ;
 } else if (tipo == 2){
-
-  var ctx6 = document.getElementById('ok_grafico').getContext('2d');
-  window.ok_grafico = new Chart(ctx6, {
-      type: 'line',
-      data: {
-        labels: ['Banheiro', 'Jardim', 'Cozinha', 'Escritórios'],
-        datasets: [{
-          label: 'Distribuição de Água',
-          data: [60, 20, 15,5],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        reponsive: true
-      }
-    });
+  window.ok_grafico = "cisterna2" ;
   }
   }
 
