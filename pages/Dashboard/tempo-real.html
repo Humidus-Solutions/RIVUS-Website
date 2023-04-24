@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Logo -->
+    <link
+      rel="shortcut icon"
+      href="../../assets/logo.png"
+      type="image/x-icon"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../pages/Dashboard/dashboard.css" />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/9f5bb96b53.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Real time Panel - Rivus</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="topbar">
+        <div class="logo">
+          <h2>Rivus</h2>
+        </div>
+        <div class="search">
+          <input type="" id="search" placeholder="search here" />
+          <label for="search"><i class="fas fa-search"></i></label>
+        </div>
+        <i class="fas fa-bell"></i>
+        <div class="user">
+          <img src="../../assets/team.jpg" alt="Perfil Team" />
+        </div>
+        <!-- Um menu tipo hamburger ao lado da imagem de user-->
+        <div class="menu" onclick="change()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+      <div class="menu-screen" id="hbMenu">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
+          <li><a href="">Configurações</a></li>
+          <li><a href="../../login.html">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sidebar">
+      <ul>
+        <li>
+          <a href="./dashboard.html">
+            <i class="fas fa-th-large"></i>
+            <div>Dashboard</div>
+          </a>
+        </li>
+        <li>
+          <a href="./tempo-real.html">
+            <i class="fa-regular fa-clock"></i>
+            <div>Current Time</div>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fas fa-chart-bar"></i>
+            <div>Analytics</div>
+          </a>
+        </li>
+        <li>
+          <a href="../Calculadora/calculadora.html">
+            <i class="fas fa-hand-holding-usd"></i>
+            <div>Earnings</div>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fas fa-cog"></i>
+            <div>Settings</div>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fas fa-question"></i>
+            <div>Help</div>
+          </a>
+        </li>
+        <li>
+          <a href="../../login.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <div>Logout</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="main">
+      <div class="cards-alert">
+        <div class="card-alert" style="background-color: #5c6bc0;">
+          <div class="card-content">
+            <div class="litros" style="color: black;">Perigo</div>
+          </div>
+        </div>
+        <div class="card-alert" style="background-color: #9ccc65;">
+          <div class="card-content">
+            <div class="litros" style="color: black;">Alerta</div>
+          </div>
+        </div>
+        <div class="card-alert" style="background-color: #42a5f5;">
+          <div class="card-content">
+            <div class="litros" style="color: black;">Ideial</div>
+          </div>
+        </div>
+        <div class="card-alert" style="background-color: #ffee58;">
+          <div class="card-content">
+            <div class="litros" style="color: black;">Alerta</div>
+          </div>
+        </div>
+        <div class="card-alert" style="background-color: #ff7043;">
+          <div class="card-content">
+            <div class="litros" style="color: black;">Perigo</div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-cisternas">
+        <div class="card-alert" style="background-color: #212124;">
+          <div class="card-content" style=" background-color: #212124;">
+            <button class="litros" style=" color: #f5f5f5; background-color: #212124; width: 100%; border: none; cursor: pointer;" onclick="alterar_grafico(1)">Cisterna 1</button>
+          </div>
+        </div>
+        <div class="card-alert" style="background-color: #212124;">
+          <div class="card-content" style=" background-color: #212124;">
+            <button class="litros" style=" color: #f5f5f5; background-color: #212124; width: 100%; border: none; cursor: pointer;" onclick="alterar_grafico(2)">Cisterna 2</button>
+          </div>
+        </div>
+      </div>
+      <div class="charts-unico">
+        <div class="chart-unico" id="plotar_grafico">
+          <h2>Consumo de Água x Reutilização de Água</h2>
+          <canvas id="ok_grafico"></canvas>          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  var hbMenu = document.getElementById("hbMenu");
+  function change() {
+    hbMenu.classList.toggle("active");
+  }
+
+  function alterar_grafico(tipo){
+
+
+    if(tipo == 1){
+
+      var ctx5 = document.getElementById('ok_grafico').getContext('2d');
+      window.ok_grafico = new Chart(ctx5, {
+        type: 'bar',
+        data: {
+          labels: ['Banheiro', 'Jardim', 'Cozinha', 'Escritórios'],
+      datasets: [{
+        label: 'Distribuição de Água',
+        data: [60, 20, 15,5],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      reponsive: true
+    }
+  });
+} else if (tipo == 2){
+
+  var ctx6 = document.getElementById('ok_grafico').getContext('2d');
+  window.ok_grafico = new Chart(ctx6, {
+      type: 'line',
+      data: {
+        labels: ['Banheiro', 'Jardim', 'Cozinha', 'Escritórios'],
+        datasets: [{
+          label: 'Distribuição de Água',
+          data: [60, 20, 15,5],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        reponsive: true
+      }
+    });
+  }
+  }
+
+  // só altere aqui se souber o que está fazendo!
+  function plotarGrafico(idcaminhao) {
+        console.log("executei plotarGrafico")
+        console.log('iniciando plotagem do gráfico...');
+
+        var ctx = canvas_grafico.getContext('2d');
+        window.grafico_linha = Chart.Line(ctx, {
+            data: dados,
+            options: configurarGrafico()
+        });
+
+        setTimeout(() => atualizarGrafico(idcaminhao, dados), 2000);
+    }
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+<script src="./chart1.js"></script>
+<script src="./chart2.js"></script>
+<script src="./chart3.js"></script>
+<script src="./chart4.js"></script>
+<script src="./cisterna1.js"></script>
+<script src="./cisterna2.js"></script>
+<script src="//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js"></script>
+<script>
+  window.myWidgetParam ? window.myWidgetParam : (window.myWidgetParam = []);
+  window.myWidgetParam.push({
+    id: 1,
+    cityid: "3448433",
+    appid: "532aad7b12867ad192ab2ce5c0d88315",
+    units: "metric",
+    containerid: "openweathermap-widget-1",
+  });
+  (function () {
+    var script = document.createElement("script");
+    script.async = true;
+    script.charset = "utf-8";
+    script.src =
+      "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(script, s);
+  })();
+</script>
