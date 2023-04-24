@@ -211,6 +211,33 @@
     grid-gap: 20px;
 }
 
+.cards-time {
+    width: 100%;
+    padding: 35px 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 2fr 2fr 2fr 2fr 2fr);
+    grid-gap: 20px;
+}
+
+.cards-alert {
+    width: 100%;
+    padding: 30px 20px 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 2fr 2fr 2fr 2fr 2fr );
+    grid-gap: 20px;
+    
+}
+
+.cards-cisternas {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 2fr 2fr );
+    grid-gap: 10px;    
+    padding: 30px 10px;
+    padding-left: 30%;
+    
+}
+
 .cards .card {
     padding: 20px;
     display: flex;
@@ -225,10 +252,40 @@
     padding: 20px;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px 0 rgba(0,0,0,0.08);
+}
+.cards-time .card-time {
+    padding: 20px;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 7px 25px 0 rgba(0,0,0,0.08);
+}
+.cards-alert .card-alert {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px 0 rgba(0,0,0,0.08);
+    width: 200px;
+}
+
+.cards-cisternas .card-alert {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px 0 rgba(0,0,0,0.08);
+    width: 200px;
 }
 
 .litros {
@@ -281,6 +338,16 @@
     padding: 20px;
     padding-top: 0;
 }
+.charts-unico {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    justify-items: center;
+    width: 60%;
+    padding: 20px 30px;
+    padding-top: 0;
+}
+
 
 .chart {
     background: #fff;
@@ -289,6 +356,17 @@
     box-shadow: 0 7px 25px 0 rgba(0,0,0,0.08);
     width: 100%;
 }
+
+.chart-unico {
+    position: relative;
+    left: 40%;
+    background: #fff;
+    padding: 35px 20px;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px 0 rgba(0,0,0,0.08);
+    width: 100%;
+}
+
 #doughnut-chart.chart {
     background: #fff;
     padding: 35px 20px;
@@ -329,6 +407,12 @@
     .cards {
         grid-template-columns: repeat(1, 1fr);
     }
+    .cards-alert {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .cards-cisternas {
+        grid-template-columns: repeat(1, 1fr);
+    }
     .charts {
         grid-template-columns: 1fr;
     }
@@ -345,6 +429,12 @@
         grid-template-columns: 1fr 5fr 0.4fr 1fr;
     }
     .cards {
+        grid-template-columns: 1fr;
+    }
+    .cards-alerts {
+        grid-template-columns: 1fr;
+    }
+    .cards-cisternas {
         grid-template-columns: 1fr;
     }
     .logo{
