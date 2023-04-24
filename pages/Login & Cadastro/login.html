@@ -8,7 +8,7 @@
   <title>Login</title>
   <link rel="icon" href="./assets/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
-  <link rel="stylesheet" href="./pages/Login & Cadastro/login.css" />
+  <link rel="stylesheet" href="./login.css" />
 </head>
 
 <body>
@@ -25,11 +25,11 @@
   
     <div class="menu-screen" id="hbMenu">
       <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./pages/Calculadora/calculadora.html">Calculadora</a></li>
-        <li><a href="./login.html">Perfil</a></li>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
+        <li><a href="./login.html">Login</a></li>
         <li><a href="./cadastro.html">Cadastrar - se</a></li>
-        <li><a href="./pages/Dashboard/dashboard.html">Dashboard</a></li>
+        <li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
       </ul>
     </div>
     
@@ -55,7 +55,7 @@
           <div class="logo">
             <h1>Humidus Rivus</h1>
             <div class="img-container">
-              <img src="./assets/logo.png" alt="">
+              <img src="../../assets/logo.png" alt="">
             </div>
           </div>  
 
@@ -65,10 +65,11 @@
         <div class="box2">
           <ul class="explore">
             <li class="title">Explore</li>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#calc">Finanças</a></li>
-            <li><a href="">Perfil</a></li>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="./">Login</a></li>
+            <li><a href="./cadastro.html">Cadastro</a></li>
+            <li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
+            <li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
           </ul>
           
         </div>
@@ -97,8 +98,8 @@
   var senha= input_senha.value;
   senha=senha.toLowerCase();
   if (email=="admin@admin.com" && senha=="admin") {
-    window.location="./pages/Dashboard/dashboard.html";
     validado=true;
+    window.location="../Dashboard/dashboard.html";
   }
   if (validado==false) { alert("Dados incorretos, tente novamente"); }
 }
