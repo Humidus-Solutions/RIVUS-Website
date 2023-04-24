@@ -234,7 +234,9 @@
     grid-template-columns: repeat(1, 2fr 2fr );
     grid-gap: 10px;    
     padding: 30px 10px;
-    padding-left: 30%;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
     
 }
 
@@ -339,13 +341,14 @@
     padding-top: 0;
 }
 .charts-unico {
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 20px;
+    grid-template-columns: repeat(1, 2fr 2fr );
+    grid-gap: 10px;    
+    padding: 30px 10px;
     justify-items: center;
-    width: 60%;
-    padding: 20px 30px;
-    padding-top: 0;
+    align-content: space-evenly;
+    align-items: center;
 }
 
 
@@ -358,8 +361,6 @@
 }
 
 .chart-unico {
-    position: relative;
-    left: 40%;
     background: #fff;
     padding: 35px 20px;
     border-radius: 10px;
@@ -376,6 +377,12 @@
 }
 
 .chart h2{
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #666;
+    text-align: center;
+}
+.chart-unico h2{
     margin-bottom: 5px;
     font-size: 20px;
     color: #666;
