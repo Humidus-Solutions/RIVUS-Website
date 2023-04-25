@@ -9,16 +9,17 @@ new Chart(ctx6, {
         data: [150, 200, 700,1500, 3000],
 
         backgroundColor: [
-          'red',
-          'yellow',
+          '#fd3d37d2',
+          '#fdfa37f5',
           '#42a5f5',
-          'yellow',
-          'red'
+          '#fdfa37f5',
+          '#fd3d37d2'
         ],
         borderWidth: 1
       }]
     },
     options: {
       reponsive: true
+      
     }
   });
