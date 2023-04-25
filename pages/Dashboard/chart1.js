@@ -1,4 +1,4 @@
-const ctx = document.getElementById('lineChart').getContext('2d');
+const ctx = document.getElementById('barChart').getContext('2d');
 
 const lineChart = new Chart(ctx, {
     type: 'bar',
@@ -8,7 +8,7 @@ const lineChart = new Chart(ctx, {
             label: 'Água Consumida',
             data: [15000, 13000, 10000, 12000, 12000, 13000, 14500, 15000, 13000, 15000, 12000, 12000],
             backgroundColor: [
-                'blue',
+                '#0a84ff'
             ],
             borderColor: [
                 'black'
@@ -20,7 +20,7 @@ const lineChart = new Chart(ctx, {
             label: 'Água Reutilizada',
             data: [7500, 6500, 5000, 6000, 6000, 6500, 7250,7500, 6500, 6000, 6000, 6000],
             backgroundColor: [
-                'red',
+                '#ff6384'
             ],
             borderColor: [
                 

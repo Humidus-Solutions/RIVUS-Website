@@ -1,4 +1,4 @@
-const ctx3 = document.getElementById('lineChart2').getContext('2d');
+const ctx3 = document.getElementById('lineChart').getContext('2d');
 
 const lineChart3 = new Chart(ctx3, {
         type: 'line',
