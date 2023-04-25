@@ -21,7 +21,7 @@
   <div class="menu-screen" id="hbMenu">
     <ul>
       <li><a href="../../index.html">Home</a></li>
-      <li><a href="./calculadora.html">Calculadora</a></li>
+      <li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
       <li><a href="./login.html">Login</a></li>
       <li><a href="./cadastro.html">Cadastrar - se</a></li>
       <li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
@@ -31,38 +31,38 @@
   <div class="main">
 
     <div id="main-container">
-      <h1>Cadastre-se</h1>
+      <h1>Cadastro da empresa</h1>
         <div class="full-box">
           <label for="email">Empresa</label>
-          <input type="text" name="empresa" id="empresa" placeholder="Digite o nome da empresa" data-min-length="3"
+          <input type="text" id="Empresa" placeholder="Digite o nome da empresa" data-min-length="3"
             data-only-letters="" />
         </div>
 
         <div class="half-box spacing">
           <label for="number">CNPJ</label>
-          <input type="number" name="number" id="number" placeholder="Digite o CNPJ da empresa" data-max-length="14"
+          <input id="Cnpj" placeholder="Digite o CNPJ da empresa" data-max-length="14"
             data-required data-only-number="" />
         </div>
 
         <div class="half-box spacing">
           <label for="email">E-mail</label>
-          <input type="email" name="email" id="email" placeholder="Digite o E-mail" data-required data-email-validate />
+          <input type="email" id="Email" placeholder="Digite o E-mail" data-required data-email-validate />
         </div>
 
         <div class="half-box spacing">
           <label for="password spacing">Senha</label>
-          <input type="password" name="password" id="password" placeholder="Digite a sua senha" data-required
+          <input type="password" id="Password" placeholder="Digite a sua senha" data-required
             data-password-validate />
         </div>
 
         <div class="half-box spacing">
           <label for="passconfirmation">Confirmar senha</label>
-          <input type="password" name="passconfirmation" id="passconfirmation" placeholder="Confirme a sua senha"
+          <input type="password" id="Passconfirmation" placeholder="Confirme a sua senha"
             data-equal="password" data-required />
         </div>
 
         <div class="full-box">
-          <input type="checkbox" name="agreement" id="agreement" />
+          <input type="checkbox" id="agreement" />
           <label for="agreement" id="agreement-label">Eu li e aceito os <a href="#">termos de uso</a></label>
         </div>
 
@@ -118,18 +118,18 @@
 
   
   function cadastrar() {
-    var empresa = empresa.value;
-    var cnpj = number.value;
-    var email = email.value;
-    var senha = password.value;
-    var confirmarSenha = passconfirmation.value;
+    var empresa = Empresa.value;
+    var cnpj = Cnpj.value;
+    var email = Email.value;
+    var senha = Password.value;
+    var confirmarSenha = Passconfirmation.value;
     var termos = agreement.value;
 
-    if (empresa == "" || cnpj == "" || email == "" || senha == "" || confirmarSenha == "" || termos == "") {
+    if (empresa == "" || cnpj == "" || email == "" || senha == "" || confirmarSenha == "") {
       alert("Preencha todos os campos!");
     } else {
       alert("Cadastro realizado com sucesso!");
-      window.location.href = "./login.html";
+      window.location.href = "./funcionario.html";
     }
   }
   

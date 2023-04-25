@@ -1,4 +1,4 @@
-const ctx4 = document.getElementById('doughnutChart');
+const ctx4 = document.getElementById('doughnut2');
 
 new Chart(ctx4, {
     type: 'pie',

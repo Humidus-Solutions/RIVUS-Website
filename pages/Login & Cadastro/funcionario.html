@@ -21,9 +21,9 @@
     <div class="menu-screen" id="hbMenu">
         <ul>
             <li><a href="../../index.html">Home</a></li>
-            <li><a href="./calculadora.html">Calculadora</a></li>
+            <li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
             <li><a href="./login.html">Login</a></li>
-            <li><a href="./cadastro.html">Cadastrar - se</a></li>
+            <li><a href="../../cadastro.html">Cadastrar - se</a></li>
             <li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
         </ul>
     </div>
@@ -57,7 +57,7 @@
             </div>
             <div class="half-box spacing">
                 <label for="number">Contato</label>
-                <input type="number" name="number" id="numero" placeholder="Número para contato" data-max-length="11"
+                <input name="number" id="numero" placeholder="Número para contato" data-max-length="11"
                     data-required data-only-number="" />
             </div>
             <div class="full-box">
@@ -123,7 +123,7 @@
             alert("Preencha todos os campos!");
         } else {
             alert("Cadastro realizado com sucesso!");
-            window.location.href = "./login.html";
+            window.location.href = "./funcionario.html";
         }
     }
 

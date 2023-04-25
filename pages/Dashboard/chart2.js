@@ -1,5 +1,5 @@
 
-const ctx2 = document.getElementById('barChart2');
+const ctx2 = document.getElementById('doughnut');
 
 new Chart(ctx2, {
   type: 'bar',

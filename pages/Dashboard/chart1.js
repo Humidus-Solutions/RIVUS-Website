@@ -1,14 +1,14 @@
-const ctx = document.getElementById('barChart').getContext('2d');
+const ctx = document.getElementById('lineChart').getContext('2d');
 
 const lineChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
         datasets: [{
             label: 'Água Consumida',
             data: [15000, 13000, 10000, 12000, 12000, 13000, 14500, 15000, 13000, 15000, 12000, 12000],
             backgroundColor: [
-                '#0a84ff'
+                'blue',
             ],
             borderColor: [
                 'black'
@@ -20,7 +20,7 @@ const lineChart = new Chart(ctx, {
             label: 'Água Reutilizada',
             data: [7500, 6500, 5000, 6000, 6000, 6500, 7250,7500, 6500, 6000, 6000, 6000],
             backgroundColor: [
-                '#ff6384'
+                'red',
             ],
             borderColor: [
                 
