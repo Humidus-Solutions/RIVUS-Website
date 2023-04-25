@@ -40,7 +40,6 @@ start index.html
 **Design | UX/UI**:
  * HTML
  * CSS
- * Bootstrap
  * MySQL
  * Arduino INO
  * Componentes Eletrônicos: "TCRT5000, RESISTORES, JUMPER, PROTOBOARD"
