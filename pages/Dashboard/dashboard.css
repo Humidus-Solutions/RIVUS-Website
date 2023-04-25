@@ -290,7 +290,7 @@
     width: 100%;
     padding: 35px 20px;
     display: grid;
-    grid-template-columns: repeat(1, 2fr 2fr 4fr);
+    grid-template-columns: repeat(1, 2fr 2fr 2fr);
     grid-gap: 20px;
 }
 
@@ -377,7 +377,7 @@
 .litros {
     font-size: 35px;
     font-weight: 500;
-    color: #0d648aea;
+    color: rgb(13, 13, 216, 0.8);
 }
 
 .number {
@@ -407,7 +407,12 @@
 
 .icon-box i {
     font-size: 45px;
-    color: #0d648aea;
+    color: rgb(13, 13, 216, 0.8);
+}
+
+.icon-box-dollar i {
+    font-size: 45px;
+    color: #0d8a17ea;
 }
 
 
