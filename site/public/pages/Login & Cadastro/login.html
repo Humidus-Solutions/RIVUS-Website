@@ -94,13 +94,11 @@
   function entrar() {
     aguardar();
 
-    var emailVar = email_input.value;
-    var senhaVar = senha_input.value;
+    var emailVar = input_email.value;
+    var senhaVar = input_senha.value;
 
     if (emailVar == "" || senhaVar == "") {
-      cardErro.style.display = "block"
-      mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-      finalizarAguardar();
+     
       return false;
     }
     else {
@@ -135,7 +133,7 @@
           sessionStorage.ID_USUARIO = json.id;
 
           setTimeout(function () {
-            window.location = "./dashboard/cards.html";
+            window.location = "./Dashboard/dashboard.html";
           }, 1000); // apenas para exibir o loading
 
         });
@@ -146,7 +144,6 @@
 
         resposta.text().then(texto => {
           console.error(texto);
-          finalizarAguardar(texto);
         });
       }
 
@@ -157,28 +154,20 @@
     return false;
   }
 
-  function sumirMensagem() {
-    cardErro.style.display = "none"
-  }
-
-  function validacao() {
-    var validado = false;
-
-    var email = input_email.value;
-    email = email.toLowerCase();
-    var senha = input_senha.value;
-    senha = senha.toLowerCase();
-    if (email == "admin@admin.com" && senha == "admin") {
-      validado = true;
-      window.location = "../Dashboard/dashboard.html";
-    }
-    if (validado == false) { alert("Dados incorretos, tente novamente"); }
-  }
-
-  var hbMenu = document.getElementById('hbMenu')
-
-  function change() {
-
-    hbMenu.classList.toggle("active");
-  }
+  // function validacao() {
+  //   var validado = false;
+  //   var email = input_email.value;
+  //   email = email.toLowerCase();
+  //   var senha = input_senha.value;
+  //   senha = senha.toLowerCase();
+  //   if (email == "admin@admin.com" && senha == "admin") {
+  //     validado = true;
+  //     window.location = "../Dashboard/dashboard.html";
+  //   }
+  //   if (validado == false) { alert("Dados incorretos, tente novamente"); }
+  // }
+  // var hbMenu = document.getElementById('hbMenu')
+  // function change() {
+  //   hbMenu.classList.toggle("active");
+  // }
 </script>
