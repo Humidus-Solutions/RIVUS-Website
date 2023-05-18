@@ -43,7 +43,7 @@
       <label for="senha">Senha</label>
       <input type="password" name="password" id="input_senha" placeholder="Digite a sua senha" />
       <a href="#" id="forgot-pass">Esqueceu a senha?</a>
-      <input type="submit" onclick="validacao()" />
+      <input type="submit" onclick="entrar()" />
       <div id="register-container">
         <p>Ainda não tem uma conta?</p>
         <a href="./cadastro.html">Registrar</a>
@@ -92,17 +92,13 @@
 
 <script>
   function entrar() {
-    aguardar();
 
     var emailVar = input_email.value;
     var senhaVar = input_senha.value;
 
     if (emailVar == "" || senhaVar == "") {
-     
+      alert("Preencha os campos!");
       return false;
-    }
-    else {
-      setInterval(sumirMensagem, 5000)
     }
 
     console.log("FORM LOGIN: ", emailVar);
@@ -129,8 +125,6 @@
 
           sessionStorage.EMAIL_USUARIO = json.email;
           sessionStorage.NOME_USUARIO = json.nome;
-          sessionStorage.CPF_USUARIO = json.cpf;
-          sessionStorage.ID_USUARIO = json.id;
 
           setTimeout(function () {
             window.location = "./Dashboard/dashboard.html";
