@@ -1,122 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./cadastro.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cadastro</title>
-  <link rel="stylesheet" href="./cadastro.css" />
-</head>
+  <body>
+    <div class="menu" onclick="change()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
 
-<body>
+    <div class="menu-screen" id="hbMenu">
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
+        <li><a href="./login.html">Login</a></li>
+        <li><a href="./cadastro.html">Cadastrar - se</a></li>
+        <li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
 
-
-  <div class="menu" onclick="change()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
-  <div class="menu-screen" id="hbMenu">
-    <ul>
-      <li><a href="../../index.html">Home</a></li>
-      <li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
-      <li><a href="./login.html">Login</a></li>
-      <li><a href="./cadastro.html">Cadastrar - se</a></li>
-      <li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
-    </ul>
-  </div>
-
-  <div class="main">
-
-    <div id="main-container">
-      <h1>Cadastro da empresa</h1>
+    <div class="main">
+      <div id="main-container">
+        <h1>Cadastro da empresa</h1>
         <div class="full-box">
           <label for="email">Empresa</label>
-          <input type="text" id="Empresa" placeholder="Digite o nome da empresa" data-min-length="3"
-            data-only-letters="" />
+          <input
+            type="text"
+            id="Empresa"
+            placeholder="Digite o nome da empresa"
+            data-min-length="3"
+            data-only-letters=""
+          />
         </div>
 
         <div class="half-box spacing">
           <label for="number">CNPJ</label>
-          <input id="Cnpj" placeholder="Digite o CNPJ da empresa" data-max-length="14"
-            data-required data-only-number="" />
+          <input
+            id="Cnpj"
+            placeholder="Digite o CNPJ da empresa"
+            data-max-length="14"
+            data-required
+            data-only-number=""
+          />
         </div>
 
         <div class="half-box spacing">
           <label for="email">E-mail</label>
-          <input type="email" id="Email" placeholder="Digite o E-mail" data-required data-email-validate />
+          <input
+            type="email"
+            id="Email"
+            placeholder="Digite o E-mail"
+            data-required
+            data-email-validate
+          />
         </div>
 
         <div class="half-box spacing">
           <label for="password spacing">Senha</label>
-          <input type="password" id="Password" placeholder="Digite a sua senha" data-required
-            data-password-validate />
+          <input
+            type="password"
+            id="Password"
+            placeholder="Digite a sua senha"
+            data-required
+            data-password-validate
+          />
         </div>
 
         <div class="half-box spacing">
           <label for="passconfirmation">Confirmar senha</label>
-          <input type="password" id="Passconfirmation" placeholder="Confirme a sua senha"
-            data-equal="password" data-required />
+          <input
+            type="password"
+            id="Passconfirmation"
+            placeholder="Confirme a sua senha"
+            data-equal="password"
+            data-required
+          />
         </div>
 
         <div class="full-box">
-          <input type="checkbox" id="agreement" />
-          <label for="agreement" id="agreement-label">Eu li e aceito os <a href="#">termos de uso</a></label>
+          <input
+            type="checkbox"
+            id="agreement"
+            value="false"
+            onclick="mudarValor()"
+          />
+          <label for="agreement" id="agreement-label"
+            >Eu li e aceito os <a href="#">termos de uso</a></label
+          >
         </div>
 
         <div class="full-box">
-          <input type="submit" id="btn-submit" value="Registrar" onclick="cadastrar()"/>        
-
+          <input
+            type="submit"
+            id="btn-submit"
+            value="Registrar"
+            onclick="cadastrar()"
+          />
         </div>
-    </div>
-    <p class="error-validation template"></p>
+      </div>
+      <p class="error-validation template"></p>
 
-    <!-- FOOTER -->
+      <!-- FOOTER -->
 
-    <div class="footer">
-      <div class="container">
-        <div class="box1">
-          <div class="logo">
-            <h1>Humidus Rivus</h1>
-            <div class="img-container">
-              <img src="../../assets/logo.png" alt="">
+      <div class="footer">
+        <div class="container">
+          <div class="box1">
+            <div class="logo">
+              <h1>Humidus Rivus</h1>
+              <div class="img-container">
+                <img src="../../assets/logo.png" alt="" />
+              </div>
             </div>
+
+            <p>c.2023 Humidus Rivus, all rights reserved.</p>
           </div>
 
-          <p>c.2023 Humidus Rivus, all rights reserved.</p>
-        </div>
+          <div class="box2">
+            <ul class="explore">
+              <li class="title">Explore</li>
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="./login.html">Login</a></li>
+              <li><a href="./">Cadastro</a></li>
+              <li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
+              <li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
+            </ul>
+          </div>
 
-        <div class="box2">
-          <ul class="explore">
-            <li class="title">Explore</li>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="./login.html">Login</a></li>
-            <li><a href="./">Cadastro</a></li>
-            <li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
-            <li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
-          </ul>
-          
-        </div>
-
-        <div class="box3">
-          <ul class="contact-info">
-            <li class="title">Contate</li>
-            <li>Rua Haddock Lobo, nº 834 </li>
-            <li>Jardins, SP, 01414-000</li>
-            <li>+55 (11)99788-1987</li>
-            <li>rivus_humidus@gmail.com</li>
-          </ul>
+          <div class="box3">
+            <ul class="contact-info">
+              <li class="title" onclick="show()">Contate</li>
+              <li>Rua Haddock Lobo, nº 834</li>
+              <li>Jardins, SP, 01414-000</li>
+              <li>+55 (11)99788-1987</li>
+              <li>rivus_humidus@gmail.com</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
 <script>
-  
-  
+  function show() {
+    console.log(agreement.value);
+  }
+
+  function mudarValor() {
+    if (agreement.value == "true") {
+      agreement.value = "false";
+    } else {
+      agreement.value = "true";
+    }
+  }
+
   function cadastrar() {
     var empresaVar = Empresa.value;
     var cnpjVar = Cnpj.value;
@@ -125,58 +167,56 @@
     var confirmarSenhaVar = Passconfirmation.value;
     var termos = agreement.value;
 
-    if (empresaVar == "" || cnpjVar == "" || emailVar == "" || senhaVar == "" || confirmarSenhaVar == "") {
-    
+    console.log(termos);
+
+    if (
+      empresaVar == "" ||
+      cnpjVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmarSenhaVar == "" ||
+      termos == "false"
+    ) {
       alert("Preencha todos os campos!");
-    } else if(senhaVar == confirmarSenhaVar){
-
-
+    } else if (senhaVar == confirmarSenhaVar) {
       fetch("/usuarios/cadastrar", {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-              // crie um atributo que recebe o valor recuperado aqui
-              // Agora vá para o arquivo routes/usuario.js
-              empresaServer: empresaVar,
-              cnpjServer: cnpjVar,
-              emailServer: emailVar,
-              senhaServer: senhaVar
-
-
-          })
-      }).then(function (resposta) {
-
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          empresaServer: empresaVar,
+          cnpjServer: cnpjVar,
+          emailServer: emailVar,
+          senhaServer: senhaVar,
+        }),
+      })
+        .then(function (resposta) {
           console.log("resposta: ", resposta);
 
           if (resposta.ok) {
-              
-              setTimeout(() => {
-                  window.location = "/pages/Cadastro/login.html";
-              }, "200")
-
+            setTimeout(() => {
+              window.location = "/pages/Cadastro/login.html";
+            }, "200");
           } else {
-              throw ("Houve um erro ao tentar realizar o cadastro!");
+            throw "Houve um erro ao tentar realizar o cadastro!";
           }
-      }).catch(function (resposta) {
+        })
+        .catch(function (resposta) {
           console.log(`#ERRO: ${resposta}`);
-
-      });
+        });
 
       return false;
-
-
     } else {
       alert("Senha Incompativeis!");
     }
-
   }
-  
-  var hbMenu = document.getElementById('hbMenu')
-  
+
+  var hbMenu = document.getElementById("hbMenu");
+
   function change() {
-    
     hbMenu.classList.toggle("active");
   }
 </script>
