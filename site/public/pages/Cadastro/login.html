@@ -91,6 +91,12 @@
 </html>
 
 <script>
+  window.onload = () => {
+    if(sessionStorage.IS_LOGGED) {
+      window.location = '/pages/Dashboard/dashboard.html'
+    }
+  }
+
   function entrar() {
 
     var emailVar = input_email.value;
@@ -124,7 +130,10 @@
           console.log(JSON.stringify(json));
 
           sessionStorage.EMAIL_USUARIO = json.email;
-          sessionStorage.NOME_USUARIO = json.nome;
+          sessionStorage.NOME_USUARIO = json.nomeEmpresa;
+          sessionStorage.CNPJ_USUARIO = json.cnpj;
+          sessionStorage.ID_USUARIO = json.idEmpresa;
+          sessionStorage.IS_LOGGED = true
 
           setTimeout(function () {
             window.location = "../Dashboard/dashboard.html";
