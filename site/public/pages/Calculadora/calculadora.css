@@ -1,332 +1,395 @@
-a {
-    text-decoration: none;
-  }
-  
-  .menu {
-    position: fixed;
-    right: 80px;
-    top: 40px;
-    width: auto;
-    height: auto;
-    z-index: 99;
-  }
-  
-  .menu:hover {
-    cursor: pointer;
-  }
-  
-  .menu div {
-    width: 32px;
-    height: 2px;
-    backdrop-filter: invert(80%);
-    background: rgba(255, 255, 255, 0.1);
-    margin-bottom: 8px;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .menu-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #fcfcff;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 80px;
-    z-index: 90;
-    transform: translateX(100%);
-    transition: all 0.6s ease-in-out;
-  }
-  
-  .active {
-    transform: translateX(0);
-  }
-  
-  .menu-screen ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: auto;
-    height: 380px;
-  }
-  
-  .menu-screen ul li {
-    position: relative;
-  }
-  
-  .menu-screen ul li a {
-    color: black;
-    text-align: left;
-    text-transform: uppercase;
-    font-size: 42px;
-    font-weight: 400;
-    font-family: "Playfair Display";
-    transition: all 0.42s ease-in-out;
-  }
-  
-  .menu-screen ul li a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 30px;
-    height: 2px;
-    background: black;
-    z-index: 91;
-    transition: all 0.42s ease-in-out;
-  }
-  
-  .menu-screen ul li a:hover::after {
-    width: 100%;
-  }
-  
-  .corpo {
-    background-image: url(https://raw.githubusercontent.com/Humidus-Solutions/RIVUS-Website/master/assets/hero-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 550px;
-  }
-  
-  body {
-    background: black;
-  }
-  
-  .h1 {
-    background-color: #010024;
-    margin-top: -1%;
-    margin-left: -1%;
-    margin-right: -8px;
-    height: 100px;
-    color: #ffffff;
-    padding: 20px;
-    text-align: center;
-    font-family: "Times New Roman", Times, serif;
-  }
-  
-  .logo {
-    width: 100px;
-    right: 150px;
-    margin-right: 90%;
-    margin-top: -40px;
-  }
-  
-  .divpai {
-    display: flex;
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    margin: 0;
-    background: url("https://raw.githubusercontent.com/Humidus-Solutions/RIVUS-Website/master/assets/humidus1.png");
-  }
-  
-  .divfilho {
-    margin-top: 5%;
-    margin-left: 15%;
-    display: inline-block;
-    background-color: #2d8bba;
-    height: 210px;
-    width: 400px;
-    border-radius: 15px;
-  }
-  
-  #div_check {
-    width: 70%;
-    margin-left: 20px;
-    margin-right: 20px;
-    color: #ffffff;
-    font-size: 20px;
-  }
-  
-  #div_reuso {
-    width: auto;
-    margin-left: 20px;
-    margin-right: 20px;
-    color: #ffffff;
-    font-size: 25px;
-  }
-  
-  .dentro {
-    margin-top: 5%;
-    margin-left: 5%;
-    display: flex;
-    background-color: #2d8bba;
-    height: 250px;
-    max-width: 700px;
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1, p, input, label, div {
+  font-family: Helvetica, sans-serif;
+}
+
+body {
+ background: url('../../assets/teamfilter.jpg');
+}
+
+.menu {
+  position: fixed;
+  right: 80px;
+  top: 40px;
+  width: auto;
+  height: auto;
+  z-index: 99;
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
+.menu div {
+  width: 32px;
+  height: 2px;
+  backdrop-filter: invert(80%);
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 8px;
+  transition: all .2s ease-in-out;
+}
+
+.menu-screen{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fcfcff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 80px;
+  z-index: 90;
+  transform: translateX(100%);
+  transition: all .6s ease-in-out;
+}
+
+.active {
+  transform: translateX(0)
+}
+
+.menu-screen ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: auto;
+  height: 380px;
+}
+
+.menu-screen ul li {
+  position: relative;
+}
+
+.menu-screen ul li a {
+  color: black;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 42px;
+  font-weight: 400;
+  font-family: 'Playfair Display';
+  transition: all .42s ease-in-out;
+  text-decoration: none;
+}
+
+.menu-screen ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: black;
+  z-index: 91;
+  transition: all .42s ease-in-out;
+}
+
+.menu-screen ul li a:hover::after {
+  width: 100%;
+}
+
+.calculadora {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculadora .popUp.show {
+  height: 422px;
+  opacity: 1;
+}
+
+.calculadora .popUp {
+  position: absolute;
+  width: 388px;
+  height: 0px;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  transition: all .2s ease-in;
+  z-index: 99;
+}
+
+.calculadora .popUp .top {
+  position: relative;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculadora .popUp .top .close {
+  color: black;
+  font-size: 22px;
+  text-transform: capitalize;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculadora .popUp .top .close:hover {
+  cursor: pointer;
+  background: black;
+  color: white;
+}
+
+.calculadora .popUp .text {
+  position: relative;
+  width: 100%;
+  height: 80%;
+  padding: 10px;
+  color: black;
+  font-size: 16px;
+  text-align: left;
+}
+
+.calculadora .form {
+  position: relative;
+  width: 388px;
+  height: 528px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #7AE7FF80;
+  border-radius: 8px;
+}
+
+.calculadora .form .box {
+  position: relative;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} 
+
+.calculadora .form .box .title {
+  position: relative;
+  width: 100%;
+  height: 20%;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.calculadora .form .box label {
+  position: relative;
+  width: 80%;
+  color: black;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  text-align: left;
+
+}
+
+.calculadora .form .box input {
+  position: relative;
+  width: 80%;
+  height: 32px;
+  border: none;
+  padding: 10px;
+  border-bottom: 2px solid #7AE7FF80;
+}
+
+.calculadora .form .box button {
+  background-color: rgb(244, 82, 109);
+  width: 220px;
+    color: #FFF;
+    border: none;
     border-radius: 20px;
-    display: none;
-  }
-  
-  .footer {
-    position: relative;
-    width: 100%;
-    height: 388px;
-    background: #000;
-  }
-  
-  .footer .container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 1fr;
-  }
-  
-  .footer .container .box1 {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 20px;
-  }
-  
-  .footer .container .box1 .logo {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 128px;
-  }
-  
-  .footer .container .box1 .logo h1 {
-    position: relative;
-    font-size: 24px;
-    font-weight: 400;
-    font-family: "Manrope";
-    text-align: center;
-    color: rgba(255, 255, 255, 0.8);
-  }
-  
-  .footer .container .box1 .logo h1::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #7eadc1ea;
-  }
-  
-  .footer .container .box1 .logo .img-container {
-    position: relative;
-    width: 38px;
-    height: 38px;
-  }
-  
-  .footer .container .box1 .logo .img-container img {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-  
-  .footer .container .box1 p {
-    color: white;
-    font-size: 14px;
-    font-family: "Manrope";
-    font-weight: 300;
-    text-align: left;
-  }
-  
-  .footer .container .box2 {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 20px;
-  }
-  
-  .footer .container .box2 .explore {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    justify-content: space-evenly;
-    height: 228px;
-  }
-  
-  .footer .container .box2 .explore .title {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 16px;
-    font-weight: 300;
-    font-family: "Manrope";
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  
-  .footer .container .box2 .explore li a {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 14px;
-    font-weight: 300;
-    font-family: "Manrope";
-    text-transform: capitalize;
-    transition: all 0.42s ease-in-out;
-  }
-  
-  .footer .container .box2 .explore li a:hover {
-    color: #7eadc1;
-  }
-  
-  .footer .container .box2 .social {
-    list-style: none;
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: space-between;
-    width: 128px;
-  }
-  
-  .footer .container .box2 .social li a {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 14px;
-    font-weight: 300;
-    font-family: "Manrope";
-    text-transform: capitalize;
-    transition: all 0.42s ease-in-out;
-  }
-  
-  .footer .container .box2 .social li a:hover {
-    color: #7eadc1;
-  }
-  
-  .footer .container .box3 {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-  }
-  
-  .footer .container .box3 .contact-info {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    justify-content: space-evenly;
-    height: 228px;
-  }
-  
-  .footer .container .box3 .contact-info .title {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 16px;
-    font-weight: 300;
-    font-family: "Manrope";
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  
-  .footer .container .box3 .contact-info li {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 14px;
-    font-weight: 300;
-    font-family: "Manrope";
-    text-transform: capitalize;
-  }
+    height: 40px;
+    cursor: pointer;
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  height: 388px;
+  background: #000;
+}
+
+.footer .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.footer .container .box1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.footer .container .box1 .logo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 128px;
+}
+
+.footer .container .box1 .logo h1 {
+  position: relative;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: 'Manrope';
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer .container .box1 .logo h1::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #7eadc1ea;
+}
+
+.footer .container .box1 .logo .img-container {
+  position: relative;
+  width: 38px;
+  height: 38px;
+}
+
+.footer .container .box1 .logo .img-container img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.footer .container .box1 p {
+  color: white;
+  font-size: 14px;
+  font-family: 'Manrope';
+  font-weight: 300;
+  text-align: left;
+}
+
+.footer .container .box2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.footer .container .box2 .explore {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-evenly;
+  height: 228px;
+}
+
+.footer .container .box2 .explore .title {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  font-weight: 300;
+  font-family: 'Manrope';
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.footer .container .box2 .explore li a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 300;
+  font-family: 'Manrope';
+  text-transform: capitalize;
+  transition: all .42s ease-in-out;
+}
+
+.footer .container .box2 .explore li a:hover {
+  color: #7eadc1;
+}
+
+.footer .container .box2 .social {
+  list-style: none;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  width: 128px;
+}
+
+.footer .container .box2 .social li a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 300;
+  font-family: 'Manrope';
+  text-transform: capitalize;
+  transition: all .42s ease-in-out;
+}
+
+.footer .container .box2 .social li a:hover {
+  color: #7eadc1;
+}
+
+.footer .container .box3 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.footer .container .box3 .contact-info {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-evenly;
+  height: 228px;
+}
+
+.footer .container .box3 .contact-info .title {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  font-weight: 300;
+  font-family: 'Manrope';
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.footer .container .box3 .contact-info li {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 300;
+  font-family: 'Manrope';
+  text-transform: capitalize;
+}
