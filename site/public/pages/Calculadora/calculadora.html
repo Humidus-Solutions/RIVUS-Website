@@ -28,8 +28,8 @@
 
     <div class="calculadora">
       <div class="popUp" id="pop">
-        <div class="top">
-          <div class="close" onclick="close()">X</div>
+        <div class="top" onclick="closePop()">
+          <div class="close" >X</div>
         </div>
         <div class="text" id="result"></div>
       </div>
@@ -71,13 +71,13 @@
         <div class="box2">
           <ul class="explore">
             <li class="title">Explore</li>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="pages/Cadastro/login.css">Login</a></li>
-            <li><a href="./pages/Cadastro/cadastro.html">Cadastro</a></li>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../Cadastro/login.html">Login</a></li>
+            <li><a href="../Cadastro/cadastro.html">Cadastro</a></li>
             <li>
-              <a href="./pages/Calculadora/calculadora.html">Calculadora</a>
+              <a href="./">Calculadora</a>
             </li>
-            <li><a href="./pages/Dashboard/dashboard.html">Dashboard</a></li>
+            <li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
           </ul>
         </div>
 
@@ -103,7 +103,7 @@
     hbMenu.classList.toggle("active");
   }
 
-  function close() {
+  function closePop() {
     popUp.classList.toggle("show");
   }
 

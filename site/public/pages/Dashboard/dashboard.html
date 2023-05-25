@@ -21,14 +21,22 @@
   </head>
 
   <body>
-    <div class="menu-screen" id="hbMenu">
+    <div class="menu" onclick="change()">
+      <div></div>
+      <div></div>
+      <div></div>
+  </div>
+
+  <div class="menu-screen" id="hbMenu">
       <ul>
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
-        <li><a href="">Configurações</a></li>
-        <li><a href="../pages/Login & Cadastro/login.html">Logout</a></li>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
+          <li><a href="../Cadastro/login.html">Login</a></li>
+          <li><a href="../Cadastro/cadastro.html">Cadastrar - se</a></li>
+          <li><a href="./">Dashboard</a></li>
       </ul>
-    </div>
+  </div> 
+
     <div class="container">
       <div class="topbar">
         <div class="logo">
@@ -105,14 +113,7 @@
         </div>
       </div>
       <div class="charts">
-        <div class="chart">
-          <h2>Consumo de Água x Reutilização de Água</h2>
-          <canvas id="barChart"></canvas>
-        </div>
-        <div class="chart">
-          <h2>Evolução da Qualidade da Água</h2>
-          <canvas id="lineChart"></canvas>
-        </div>
+        
         <div class="chart" id="doughnut-chart">
           <h2>Desempenho Geral Rivus</h2>
           <canvas id="barChart2"></canvas>
@@ -132,14 +133,15 @@
   }
 
   window.onload = () => {
-    if (!sessionStorage.IS_LOGGED) {
+    if (sessionStorage.IS_LOGGED == 'false') {
       alert("Inicie uma sessao!");
-      setTimeout(() => {
+
         window.location = "/pages/Cadastro/login.html";
-      }, "200");
-    } else {
+      
+      
+    } else if(sessionStorage.IS_LOGGED == 'true'){
       alert(`Bem vindo(a) ${sessionStorage.NOME_USUARIO}`);
-    }
+    } 
   };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>

@@ -7,6 +7,10 @@ h1, p, input, label, div {
   font-family: Helvetica, sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
  background: url('../../assets/teamfilter.jpg');
 }
@@ -106,14 +110,15 @@ body {
 .calculadora .popUp.show {
   height: 422px;
   opacity: 1;
+  display: flex;
 }
 
 .calculadora .popUp {
   position: absolute;
-  width: 388px;
+  width: 448px;
   height: 0px;
   opacity: 0;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
@@ -121,6 +126,7 @@ body {
   backdrop-filter: blur(8px);
   border-radius: 8px;
   transition: all .2s ease-in;
+  padding: 40px;
   z-index: 99;
 }
 
@@ -158,7 +164,8 @@ body {
   padding: 10px;
   color: black;
   font-size: 16px;
-  text-align: left;
+  text-align: justify;
+
 }
 
 .calculadora .form {
@@ -208,7 +215,7 @@ body {
 .calculadora .form .box input {
   position: relative;
   width: 80%;
-  height: 32px;
+  height: 30px;
   border: none;
   padding: 10px;
   border-bottom: 2px solid #7AE7FF80;
