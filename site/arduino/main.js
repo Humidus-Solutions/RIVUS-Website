@@ -19,10 +19,6 @@ const HABILITAR_OPERACAO_INSERIR = true;
 const AMBIENTE = 'desenvolvimento';
 
 const serial = async (
-    // valoresDht11Umidade,
-    // valoresDht11Temperatura,
-    // valoresLuminosidade,
-    // valoresLm35Temperatura,
     valoresChave
 ) => {
     let poolBancoDados = ''
@@ -62,25 +58,11 @@ const serial = async (
     arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
         //console.log(data);
         const valores = data.split(';');
-        // const dht11Umidade = parseFloat(valores[0]);
-        // const dht11Temperatura = parseFloat(valores[1]);
-        // const lm35Temperatura = parseFloat(valores[2]);
-        // const luminosidade = parseFloat(valores[3]);
         const chave = parseInt(valores[4]);
-
-        // valoresDht11Umidade.push(dht11Umidade);
-        // valoresDht11Temperatura.push(dht11Temperatura);
-        // valoresLuminosidade.push(luminosidade);
-        // valoresLm35Temperatura.push(lm35Temperatura);
         valoresChave.push(chave);
 
         if (HABILITAR_OPERACAO_INSERIR) {
             if (AMBIENTE == 'producao') {
-                // altere!
-                // Este insert irá inserir os dados na tabela "medida"
-                // -> altere nome da tabela e colunas se necessário
-                // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
-                // >> Importante! você deve ter o aquario de id 1 cadastrado.
                 sqlquery = `INSERT INTO medida (chave, momento, fk_aquario) VALUES (${dht11Umidade}, ${dht11Temperatura}, ${luminosidade}, ${lm35Temperatura}, ${chave}, CURRENT_TIMESTAMP, 1)`;
 
                 // CREDENCIAIS DO BANCO REMOTO - SQL SERVER
