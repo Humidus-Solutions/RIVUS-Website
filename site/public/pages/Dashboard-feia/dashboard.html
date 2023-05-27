@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Logo -->
+    <link
+      rel="shortcut icon"
+      href="../../assets/logo.png"
+      type="image/x-icon"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../pages/Dashboard/dashboard.css" />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/9f5bb96b53.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Admin Panel - Rivus</title>
+  </head>
+
+  <body>
+    <div class="menu" onclick="change()">
+      <div></div>
+      <div></div>
+      <div></div>
+  </div>
+
+  <div class="menu-screen" id="hbMenu">
+      <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
+          <li><a href="../Cadastro/login.html">Login</a></li>
+          <li><a href="../Cadastro/cadastro.html">Cadastrar - se</a></li>
+          <li><a href="./">Dashboard</a></li>
+      </ul>
+  </div> 
+
+    <div class="container">
+      <div class="topbar">
+        <div class="logo">
+          <h2>Humidus Solution</h2>
+        </div>
+        <div class="search"></div>
+        <!-- Um menu tipo hamburger ao lado da imagem de user-->
+        <div class="menu" onclick="change()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <ul>
+        <li>
+          <a href="./dashboard.html">
+            <i class="fas fa-th-large"></i>
+            <div>Dashboard</div>
+          </a>
+        </li>
+        <li>
+          <a href="./tempo-real.html">
+            <i class="fa-regular fa-clock"></i>
+            <div>Tempo real</div>
+          </a>
+        </li>
+
+        <li>
+          <a href="../Calculadora/calculadora.html">
+            <i class="fas fa-hand-holding-usd"></i>
+            <div>Simulador Financeiro</div>
+          </a>
+        </li>
+        <li>
+          <a href=" ">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <div>Logout</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="main">
+      <div class="cards">
+        <div class="card">
+          <div class="card-content">
+            <div class="litros">31242 Litros</div>
+            <div class="card-name">Agua Reutilizada</div>
+          </div>
+          <div class="icon-box">
+            <i class="fa-solid fa-water"></i>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="number">R$ 34.243,00</div>
+            <div class="card-name">Dinheiro Economizado</div>
+          </div>
+          <div class="icon-box-dollar">
+            <i class="fa-solid fa-sack-dollar"></i>
+          </div>
+        </div>
+        <div class="card-medio">
+          <div class="card-content">
+            <div id="cont_f0530a450533b2673da742c9da0e1223">
+              <script
+                type="text/javascript"
+                async
+                src="https://www.tempo.com/wid_loader/f0530a450533b2673da742c9da0e1223"
+              ></script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="charts">
+        
+        <div class="chart" id="doughnut-chart">
+          <h2>Desempenho Geral Rivus</h2>
+          <canvas id="barChart2"></canvas>
+        </div>
+        <div class="chart">
+          <h2>Distribuição de Água</h2>
+          <canvas id="doughnutChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  var hbMenu = document.getElementById("hbMenu");
+  function change() {
+    hbMenu.classList.toggle("active");
+  }
+
+  window.onload = () => {
+    if (sessionStorage.IS_LOGGED == 'false') {
+      alert("Inicie uma sessao!");
+
+        window.location = "/pages/Cadastro/login.html";
+      
+      
+    } else if(sessionStorage.IS_LOGGED == 'true'){
+      alert(`Bem vindo(a) ${sessionStorage.NOME_USUARIO}`);
+    } 
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+<script src="./chart1.js"></script>
+<script src="./chart2.js"></script>
+<script src="./chart3.js"></script>
+<script src="./chart4.js"></script>

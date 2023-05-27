@@ -93,7 +93,7 @@
 <script>
   window.onload = () => {
     if(sessionStorage.IS_LOGGED == 'true') {
-      window.location = '/pages/Dashboard/dashboard.html'
+      window.location = '/pages/dashboard/dashboard.html'
     }
   }
 
@@ -136,7 +136,7 @@
           sessionStorage.IS_LOGGED = true
 
           setTimeout(function () {
-            window.location = "../Dashboard/dashboard.html";
+            window.location = "../dashboard/dashboard.html";
           }, 1000); // apenas para exibir o loading
 
         });
@@ -156,21 +156,4 @@
 
     return false;
   }
-
-  // function validacao() {
-  //   var validado = false;
-  //   var email = input_email.value;
-  //   email = email.toLowerCase();
-  //   var senha = input_senha.value;
-  //   senha = senha.toLowerCase();
-  //   if (email == "admin@admin.com" && senha == "admin") {
-  //     validado = true;
-  //     window.location = "../Dashboard/dashboard.html";
-  //   }
-  //   if (validado == false) { alert("Dados incorretos, tente novamente"); }
-  // }
-  // var hbMenu = document.getElementById('hbMenu')
-  // function change() {
-  //   hbMenu.classList.toggle("active");
-  // }
 </script>
