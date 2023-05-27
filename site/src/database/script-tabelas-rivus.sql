@@ -27,15 +27,17 @@ create table cisterna (
 /* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
 
 create table medida (
+	id INT PRIMARY KEY AUTO_INCREMENT,
 	chave TINYINT,
 	momento DATETIME,
 	fk_cisterna INT,
 	FOREIGN KEY (fk_cisterna) REFERENCES cisterna(id)
 );
--- insert into medida (chave, momento, fk_cisterna) values (1, '2023-11-11 11:11:11', 1), (2, '2023-11-11 11:11:11', 1), (3, '2023-11-11 11:11:11', 1), (4, '2023-11-11 11:11:11', 1), (5, '2023-11-11 11:11:11', 1);
--- insert into medida (chave, momento, fk_cisterna) values (0, '2023-11-11 11:11:11', 2), (1, '2023-11-11 11:11:11', 2), (1, '2023-11-11 11:11:11', 2), (2, '2023-11-11 11:11:11', 2), (2, '2023-11-11 11:11:11', 2);
--- insert into medida (chave, momento, fk_cisterna) values (0, '2023-11-11 11:11:11', 3), (2, '2023-11-11 11:11:11', 3), (3, '2023-11-11 11:11:11', 3), (4, '2023-11-11 11:11:11', 3), (4, '2023-11-11 11:11:11', 3);
--- insert into medida (chave, momento, fk_cisterna) values (4, '2023-11-11 11:11:11', 4), (3, '2023-11-11 11:11:11', 4), (2, '2023-11-11 11:11:11', 4), (1, '2023-11-11 11:11:11', 4), (0, '2023-11-11 11:11:11', 4);
+-- insert into medida (chave, momento, fk_cisterna) values (1, NOW(), 1), (2, NOW(), 1), (3, NOW(), 1), (4, NOW(), 1), (4, NOW(), 1);
+-- insert into medida (chave, momento, fk_cisterna) values (4, NOW(), 2), (4, NOW(), 2), (3, NOW(), 2), (2, NOW(), 2), (1, NOW(), 2);
+-- insert into medida (chave, momento, fk_cisterna) values (0, NOW(), 3), (1, NOW(), 3), (3, NOW(), 3), (4, NOW(), 3), (4, NOW(), 3);
+-- insert into medida (chave, momento, fk_cisterna) values (4, NOW(), 4), (4, NOW(), 4), (2, NOW(), 4), (1, NOW(), 4), (0, NOW(), 4);
+-- insert into medida (chave, momento, fk_cisterna) values (1, NOW(), 1), (2, NOW(), 2), (3, NOW(), 3), (4, NOW(), 4);
 
 
 

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Dashboards</title>
+    <title>Rivus | Dashboards</title>
 
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./dashboards.css">
@@ -31,7 +31,7 @@
 
     <div class="janela">
         <div class="header-left">
-            <h1>AquaTech</h1>
+            <h1>Rivus</h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -248,7 +248,8 @@
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
-            labels.push(registro.momento);
+            var dataGrafico = registro.momento.substring(0, 10) + ' ' + registro.momento.substring(11, 19);
+            labels.push(dataGrafico);
             dados.datasets[0].data.push(registro.chave);
         }
 
