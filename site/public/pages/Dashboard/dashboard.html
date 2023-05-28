@@ -236,10 +236,58 @@
                 label: 'Chave',
                 data: [],
                 fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
+                backgroundColor: 'rgba(0, 123, 255, 0.5)', // Cor de fundo do gráfico
+                borderColor: 'rgba(0, 123, 255, 1)', // Cor da borda do gráfico
+                borderWidth: 1 // Largura da borda do gráfico
             }]
         };
+
+        // Defina as opções do gráfico
+        var options = {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    suggestedMin: 0, // Valor mínimo do eixo y
+                    suggestedMax: 4, // Valor máximo do eixo y
+                    ticks: {
+                        stepSize: 1, // Espaçamento entre as marcações do eixo y
+                        callback: function(value, index, values) {
+                            // Define as cores das marcações com base nos níveis desejados
+                            if (value === 0) {
+                                return '0 (m³)'; // Converte para string
+                            } else if(value === 1) {
+                                return '250 (m³)'; // Converte para string
+                            } else if(value === 2) {
+                                return '500 (m³)'; // Converte para string
+                            } else if(value === 3) {
+                                return '750 (m³)'; // Converte para string
+                            } else if(value === 4) {
+                                return '1000 (m³)'; // Converte para string
+                            }
+                        },
+                        color: function(context) {
+                            var value = context.tick.value;
+                            // Define as cores das marcações com base nos níveis desejados
+                            if (value === 0) {
+                                return 'white';
+                            } else if (value === 1) {
+                                return 'yellow';
+                            } else if(value === 2) {
+                                return 'green';
+                            } else if(value === 3) {
+                                return 'orange';
+                            } else if(value === 4) {
+                                return 'red';
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+
+
+
 
         console.log('----------------------------------------------')
         console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
@@ -265,6 +313,7 @@
         const config = {
             type: 'line',
             data: dados,
+            options: options
         };
 
         // Adicionando gráfico criado em div na tela
