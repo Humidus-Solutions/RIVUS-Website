@@ -58,7 +58,7 @@ const serial = async (
     arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
         //console.log(data);
         const valores = data.split(';');
-        const chave = parseInt(valores[4]);
+        const chave = parseInt(valores[0]);
         valoresChave.push(chave);
 
         if (HABILITAR_OPERACAO_INSERIR) {
@@ -80,13 +80,6 @@ const serial = async (
                     .catch(err => console.log("erro! " + err));
 
             } else if (AMBIENTE == 'desenvolvimento') {
-
-                // altere!
-                // Este insert irá inserir os dados na tabela "medida"
-                // -> altere nome da tabela e colunas se necessário
-                // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
-                // >> você deve ter o aquario de id 1 cadastrado.
-                // dht11_umidade, dht11_temperatura, luminosidade, lm35_temperatura, 
                 await poolBancoDados.execute(
                     'INSERT INTO medida (chave, momento, fk_cisterna) VALUES (?, now(), 1)',
                     [chave]
@@ -106,10 +99,6 @@ const serial = async (
 
 // não altere!
 const servidor = (
-    // valoresDht11Umidade,
-    // valoresDht11Temperatura,
-    // valoresLuminosidade,
-    // valoresLm35Temperatura,
     valoresChave
 ) => {
     const app = express();
@@ -121,41 +110,17 @@ const servidor = (
     app.listen(SERVIDOR_PORTA, () => {
         console.log(`API executada com sucesso na porta ${SERVIDOR_PORTA}`);
     });
-    // app.get('/sensores/dht11/umidade', (_, response) => {
-    //     return response.json(valoresDht11Umidade);
-    // });
-    // app.get('/sensores/dht11/temperatura', (_, response) => {
-    //     return response.json(valoresDht11Temperatura);
-    // });
-    // app.get('/sensores/luminosidade', (_, response) => {
-    //     return response.json(valoresLuminosidade);
-    // });
-    // app.get('/sensores/lm35/temperatura', (_, response) => {
-    //     return response.json(valoresLm35Temperatura);
-    // });
-    app.get('/sensores/chave', (_, response) => {
+   app.get('/sensores/chave', (_, response) => {
         return response.json(valoresChave);
     });
 }
 
 (async () => {
-    // const valoresDht11Umidade = [];
-    // const valoresDht11Temperatura = [];
-    // const valoresLuminosidade = [];
-    // const valoresLm35Temperatura = [];
     const valoresChave = [];
     await serial(
-        // valoresDht11Umidade,
-        // valoresDht11Temperatura,
-        // valoresLuminosidade,
-        // valoresLm35Temperatura,
         valoresChave
     );
     servidor(
-        // valoresDht11Umidade,
-        // valoresDht11Temperatura,
-        // valoresLuminosidade,
-        // valoresLm35Temperatura,
         valoresChave
     );
 })();
