@@ -143,7 +143,7 @@ function cadastrarLitros(req, res) {
                 }
             );
 
-        usuarioModel.cadastrarLitros(litros, idEmp).then(
+        usuarioModel.cadastrarLitros(litros, idEmpresa).then(
             function(response) {
                 res.json(response);
             }
