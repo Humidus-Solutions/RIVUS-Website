@@ -40,6 +40,17 @@
         </div>
 
         <div class="half-box spacing">
+          <label for="number">Litros cicsterna</label>
+          <input
+            id="Litros"
+            placeholder="Digite os litros da cisterna"
+            data-max-length="20"
+            data-required
+            data-only-number=""
+          />
+        </div>
+
+        <div class="half-box spacing">
           <label for="number">CNPJ</label>
           <input
             id="Cnpj"
@@ -92,7 +103,7 @@
           />
           <label for="agreement" id="agreement-label"
             >Eu li e aceito os <a href="#">termos de uso</a>
-            </label>
+          </label>
         </div>
 
         <div class="full-box">
@@ -165,6 +176,7 @@
     var emailVar = Email.value;
     var senhaVar = Password.value;
     var confirmarSenhaVar = Passconfirmation.value;
+    var litrosVar = Litros.value
     var termos = agreement.value;
 
     console.log(termos);
@@ -220,5 +232,3 @@
     hbMenu.classList.toggle("active");
   }
 </script>
-
-
