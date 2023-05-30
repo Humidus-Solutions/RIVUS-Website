@@ -254,16 +254,14 @@
                         callback: function(value, index, values) {
                             // Define as cores das marcações com base nos níveis desejados
                             if (value === 0) {
-                                return '0 (m³)'; // Converte para string
+                                return 'Vazio'; // Converte para string
                             } else if(value === 1) {
-                                return '250 (m³)'; // Converte para string
+                                return 'Baixo'; // Converte para string
                             } else if(value === 2) {
-                                return '500 (m³)'; // Converte para string
+                                return 'Médio'; // Converte para string
                             } else if(value === 3) {
-                                return '750 (m³)'; // Converte para string
-                            } else if(value === 4) {
-                                return '1000 (m³)'; // Converte para string
-                            }
+                                return 'Cheio'; // Converte para string
+                            } 
                         },
                         color: function(context) {
                             var value = context.tick.value;

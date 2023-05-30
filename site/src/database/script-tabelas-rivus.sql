@@ -2,25 +2,20 @@ create database Rivus;
 use Rivus;
 
 CREATE TABLE cadastroEmpresa (
-	id INT PRIMARY KEY AUTO_INCREMENT,
+	idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
 	nomeEmpresa VARCHAR(50),
     cnpj VARCHAR(50),
 	email VARCHAR(50),
 	senha VARCHAR(50)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES cadastroEmpresa(id)
-);
 -- insert into aviso (titulo, descricao, fk_empresa) values
 create table cisterna (
 /* em nossa regra de negócio, um cisterna tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300)
+	idCisterna INT PRIMARY KEY AUTO_INCREMENT,
+	litros INT,
+	fkEmpresa INT,
+	CONSTRAINT fkEmpresa FOREIGN KEY (fkEmpresa) REFERENCES cadastroEmpresa(idEmpresa)
 );
 -- insert into cisterna (descricao) values ('cisterna1');
 
@@ -30,8 +25,8 @@ create table medida (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	chave TINYINT,
 	momento DATETIME,
-	fk_cisterna INT,
-	FOREIGN KEY (fk_cisterna) REFERENCES cisterna(id)
+	fkCisterna INT,
+	CONSTRAINT fkCisterna FOREIGN KEY (fkCisterna) REFERENCES cisterna(idCisterna)
 );
 -- insert into medida (chave, momento, fk_cisterna) values (1, NOW(), 1), (2, NOW(), 1), (3, NOW(), 1), (4, NOW(), 1), (4, NOW(), 1);
 -- insert into medida (chave, momento, fk_cisterna) values (4, NOW(), 2), (4, NOW(), 2), (3, NOW(), 2), (2, NOW(), 2), (1, NOW(), 2);
