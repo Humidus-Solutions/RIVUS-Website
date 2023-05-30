@@ -20,4 +20,8 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+router.post("/cadastrarLitros", function (req, res) {
+    usuarioController.cadastrarLitros(req, res);
+});
+
 module.exports = router;
