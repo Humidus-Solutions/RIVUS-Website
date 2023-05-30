@@ -66,6 +66,8 @@ function cadastrar(req, res) {
     var cnpj = req.body.cnpjServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
+    var litros = req.body.litroServer;
+    var idEmp = 1
 
     // Faça as validações dos valores
     if (empresa == undefined) {
@@ -75,6 +77,8 @@ function cadastrar(req, res) {
     } else if (email == undefined) {
         res.status(400).send("Seu cpf está undefined!");
     } else if (senha == undefined) {
+        res.status(400).send("Sua senha está undefined!");
+    } else if (litros == undefined) {
         res.status(400).send("Sua senha está undefined!");
     } else {
         
@@ -94,6 +98,21 @@ function cadastrar(req, res) {
                     res.status(500).json(erro.sqlMessage);
                 }
             );
+
+        usuarioModel.cadastrarLitros(litros, idEmp).then(
+            function(response) {
+                res.json(response);
+            }
+        ).catch(
+            function (error) {
+                console.log(error)
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        error.sqlMessage
+                );
+                res.status(500).json(error.sqlMessage);
+            }
+        )
     }
 }
 
