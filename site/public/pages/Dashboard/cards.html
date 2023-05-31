@@ -25,35 +25,67 @@
     <div class="janela">
 
 
-        <div class="header-left dash-header">
+        <header>
+            <nav>
+                <div class="divLogo">
+                    <a href="../index.html"><img src="../../assets/logo-hardblue.png" alt=""></a>
+                </div>
+                <div class="btns-dash">
+                    <!-- O gráfico é chamado de acordo com o id (fk_cisterna) do banco  -->
+                    <button class="btn-chart btn-pink" onclick="exibirAquario(1)" id="btnAquario1">Cisterna 1</button>
+                    <button class="btn-chart btn-white" onclick="exibirAquario(2)" id="btnAquario2">Cisterna 2</button>
+                    <button class="btn-chart btn-white" onclick="exibirAquario(3)" id="btnAquario3">Cisterna 3</button>
+                    <button class="btn-chart btn-white" onclick="exibirAquario(4)" id="btnAquario4">Cisterna 4</button>
+                </div>
 
-            <h1>Rivus</h1>
 
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
+                <div class="hello">
+                    <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-list"><a class="interação" href="../../index.html">Home</a></li>
+                    <li class="nav-list"><a class="interação" href="../Calculadora/calculadora.html"> Calculadora</a>
+                    </li>
+                    <li class="nav-list"><a class="interação" href="../pages/onis.html"></a></li>
 
-            <div class="btn-nav">
-                <h3>Cisternas</h3>
-            </div>
+                </ul>
+            </nav>
 
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
+        </header>
+        <div class="navegation">
 
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div>
+            <ul>
+                <li class="list ">
+                    <a href="../Dashboard/cards.html">
+                        <span class="icon"><img src="../../assets/cisterna.png" alt=""></span>
+                        <span class="title">cisterna</span>
+                    </a>
+                </li>
+                <li id="sound" class="list active">
+                    <a href="./dashboard.html">
+                        <span class="icon"><img src="../../assets/grafico-de-bolo.png" alt=""></span>
+                        <span class="title">Gráficos </span>
+                    </a>
+                </li>
+                <li id="love" onclick="love()" class="list">
+                    <a href="./mural.html">
+                        <span class="icon"><img src="../../assets/quadro-de-avisos.png" alt=""></span>
+                        <span class="title">Mural de Avisos</span>
+                    </a>
+                </li>
+                <li id="insect" onclick="limparSessao()" class="list">
+                    <a href="#">
+                        <span class="icon"><img src="../../assets/sair.png" alt=""></span>
+                        <span class="title">Sair</span>
+                    </a>
+                </li>
 
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
 
+            </ul>
         </div>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 
         <div class="dash">
             <div id="alerta">
@@ -85,14 +117,14 @@
                 <div class="card">
                     <h1>Cisterna 1</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_1">-°C</p>
+                        <p id="temp_aquario_1">-Litros</p>
                     </div>
                     <div class="cor-alerta" id="card_1"></div>
                 </div>
                 <div class="card">
                     <h1>Cisterna 2</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_2">-°C</p>
+                        <p id="temp_aquario_2">-Litros</p>
                     </div>
                     <div class="cor-alerta" id="card_2"></div>
 
@@ -100,24 +132,20 @@
                 <div class="card">
                     <h1>Cisterna 3</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_3">-°C</p>
+                        <p id="temp_aquario_3">-Litros</p>
                     </div>
                     <div class="cor-alerta" id="card_3"></div>
                 </div>
                 <div class="card">
                     <h1>Cisterna 4</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_4">-°C</p>
+                        <p id="temp_aquario_4">-Litros</p>
                     </div>
                     <div class="cor-alerta" id="card_4"></div>
                 </div>
-
             </div>
-
         </div>
     </div>
-
-
 </body>
 
 <script>
