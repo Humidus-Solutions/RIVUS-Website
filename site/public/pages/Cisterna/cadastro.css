@@ -1,3 +1,7 @@
+@import url('../../style/fonts.css');
+@import url('../../style/menu.css');
+@import url('../../style/footer.css');
+
 .container {
     position: relative;
     width: 100%;

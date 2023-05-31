@@ -1,0 +1,63 @@
+.about {
+    position: relative;
+    width: 66%;
+    height: 980px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.about .img1 {
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    width: 380px;
+    height: 280px;
+}
+
+.about .img1 img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about h1 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.about .text {
+    position: relative;
+    width: 100%;
+}
+
+.about .text h2 {
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: 400;
+    font-family: 'Playfair Display';
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.about .text p {
+    position: absolute;
+    right: 40px;
+    width: 390px;
+    height: auto;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    color: rgba(255, 255, 255, 0.9);
+}

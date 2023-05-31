@@ -1,0 +1,93 @@
+.calculadora {
+    position: relative;
+    width: 66%;
+    height: 868px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+
+.calculadora h1 {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.calculadora .text1 {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.calculadora .text1 h1 {
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: 400;
+    font-family: 'Playfair Display';
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.calculadora .text {
+    position: relative;
+    height: 288px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.calculadora .text p {
+    width: 348px;
+    height: auto;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.calculadora .text .btn {
+    position: relative;
+    width: auto;
+    height: auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 300;
+    font-family: 'Manrope';
+    color: rgba(255, 255, 255, 0.9);
+    transition: all .42s ease-in-out;
+}
+
+.calculadora .text .btn:hover {
+    cursor: pointer;
+    color: #7eadc1;
+}
+
+.calculadora .text .btn:hover::before {
+    width: 100%;
+}
+
+.calculadora .text .btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 33%;
+    height: 1px;
+    background-color: #7eadc1ea;
+    transition: all .42s ease-in-out;
+}
+

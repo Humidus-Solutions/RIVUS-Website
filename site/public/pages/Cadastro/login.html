@@ -1,61 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="icon" href="./assets/logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css"
+    />
+    <link rel="stylesheet" href="./login.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
-  <link rel="icon" href="./assets/logo.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" />
-  <link rel="stylesheet" href="./login.css" />
-</head>
-
-<body>
-
-
-
-  <div class="main">
-
-    <div class="menu" onclick="change()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-
-    <div class="menu-screen" id="hbMenu">
-      <ul>
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
-        <li><a href="./login.html">Login</a></li>
-        <li><a href="./cadastro.html">Cadastrar - se</a></li>
-        <li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
-      </ul>
-    </div>
-
-    <div id="login-container">
-      <h1 id="humidos">Humidos</h1>
-      <br />
-
-      <h2>Login</h2>
-      <label for="email">E-mail</label>
-      <input type="email" name="email" id="input_email" placeholder="Digite o seu E-mail" autocomplete="off" />
-      <label for="senha">Senha</label>
-      <input type="password" name="password" id="input_senha" placeholder="Digite a sua senha" />
-      <a href="#" id="forgot-pass">Esqueceu a senha?</a>
-      <input type="submit" onclick="entrar()" />
-      <div id="register-container">
-        <p>Ainda não tem uma conta?</p>
-        <a href="./cadastro.html">Registrar</a>
+  <body>
+    <div class="main">
+      <div class="menu" onclick="change()">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
+
+      <div class="menu-screen" id="hbMenu">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
+          <li><a href="./login.html">Login</a></li>
+          <li><a href="./cadastro.html">Cadastrar - se</a></li>
+          <li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+
+      <div id="login-container">
+        <h1 id="humidos">Humidos</h1>
+        <br />
+
+        <h2>Login</h2>
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          name="email"
+          id="input_email"
+          placeholder="Digite o seu E-mail"
+          autocomplete="off"
+        />
+        <label for="senha">Senha</label>
+        <input
+          type="password"
+          name="password"
+          id="input_senha"
+          placeholder="Digite a sua senha"
+        />
+        <a href="#" id="forgot-pass">Esqueceu a senha?</a>
+        <input type="submit" onclick="entrar()" />
+        <div id="register-container">
+          <p>Ainda não tem uma conta?</p>
+          <a href="./cadastro.html">Registrar</a>
+        </div>
+      </div>
+      
     </div>
+    
     <div class="footer">
       <div class="container">
         <div class="box1">
           <div class="logo">
             <h1>Humidus Rivus</h1>
             <div class="img-container">
-              <img src="../../assets/logo.png" alt="">
+              <img src="../../assets/logo.png" alt="" />
             </div>
           </div>
 
@@ -71,13 +83,12 @@
             <li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
             <li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
           </ul>
-
         </div>
 
         <div class="box3">
           <ul class="contact-info">
             <li class="title">Contate</li>
-            <li>Rua Haddock Lobo, nº 834 </li>
+            <li>Rua Haddock Lobo, nº 834</li>
             <li>Jardins, SP, 01414-000</li>
             <li>+55 (11)99788-1987</li>
             <li>rivus_humidus@gmail.com</li>
@@ -85,20 +96,20 @@
         </div>
       </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
+
+<script src="../../js/menu.js"></script>
 
 <script>
   window.onload = () => {
-    if(sessionStorage.IS_LOGGED == 'true') {
-      window.location = '/pages/dashboard/dashboard.html'
+    if (sessionStorage.IS_LOGGED == "true") {
+      window.location = "/pages/dashboard/dashboard.html";
     }
-  }
+  };
+
 
   function entrar() {
-
     var emailVar = input_email.value;
     var senhaVar = input_senha.value;
 
@@ -113,46 +124,44 @@
     fetch("/usuarios/autenticar", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         emailServer: emailVar,
-        senhaServer: senhaVar
-      })
-    }).then(function (resposta) {
-      console.log("ESTOU NO THEN DO entrar()!")
-
-      if (resposta.ok) {
-        console.log(resposta);
-
-        resposta.json().then(json => {
-          console.log(json);
-          console.log(JSON.stringify(json));
-
-          sessionStorage.EMAIL_USUARIO = json.email;
-          sessionStorage.NOME_USUARIO = json.nomeEmpresa;
-          sessionStorage.CNPJ_USUARIO = json.cnpj;
-          sessionStorage.ID_USUARIO = json.idEmpresa;
-          sessionStorage.IS_LOGGED = true
-
-          setTimeout(function () {
-            window.location = "../dashboard/dashboard.html";
-          }, 1000); // apenas para exibir o loading
-
-        });
-
-      } else {
-
-        console.log("Houve um erro ao tentar realizar o login!");
-
-        resposta.text().then(texto => {
-          console.error(texto);
-        });
-      }
-
-    }).catch(function (erro) {
-      console.log(erro);
+        senhaServer: senhaVar,
+      }),
     })
+      .then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!");
+
+        if (resposta.ok) {
+          console.log(resposta);
+
+          resposta.json().then((json) => {
+            console.log(json);
+            console.log(JSON.stringify(json));
+
+            sessionStorage.EMAIL_USUARIO = json.email;
+            sessionStorage.NOME_USUARIO = json.nomeEmpresa;
+            sessionStorage.CNPJ_USUARIO = json.cnpj;
+            sessionStorage.ID_USUARIO = json.idEmpresa;
+            sessionStorage.IS_LOGGED = true;
+
+            setTimeout(function () {
+              window.location = "../dashboard/dashboard.html";
+            }, 1000); // apenas para exibir o loading
+          });
+        } else {
+          console.log("Houve um erro ao tentar realizar o login!");
+
+          resposta.text().then((texto) => {
+            console.error(texto);
+          });
+        }
+      })
+      .catch(function (erro) {
+        console.log(erro);
+      });
 
     return false;
   }
