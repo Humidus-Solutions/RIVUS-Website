@@ -1,6 +1,7 @@
 @import url('../../style/fonts.css');
 @import url('../../style/menu.css');
 @import url('../../style/footer.css');
+@import url('../pageBg.css');
 
 
 /*Gerais*/
@@ -14,16 +15,6 @@
     border: none;
 }
 
-.main{
-    background-image: url('../../assets/teamfilter.jpg');
-    background-size: cover;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 textarea:focus, input:focus{
     outline: none;

@@ -23,21 +23,21 @@
 .menu-screen{
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: -100%;
+    width: 622px;
     height: 100vh;
-    background: #fcfcff;
+    background: #fcfcffc2;
+    backdrop-filter: blur(28px);
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: 80px;
     z-index: 90;
-    transform: translateX(100%);
     transition: all .6s ease-in-out;
 }
 
-.active {
-    transform: translateX(0)
+.menu-screen.active {
+    right: 0;
 }
 
 .menu-screen ul {

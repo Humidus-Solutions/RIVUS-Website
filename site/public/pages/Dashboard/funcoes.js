@@ -19,7 +19,11 @@ function validarSessao() {
 
 function limparSessao() {
     // aguardar();
-    sessionStorage.clear();
+    sessionStorage.EMAIL_USUARIO = '';
+    sessionStorage.NOME_USUARIO = '';
+    sessionStorage.CNPJ_USUARIO = 0;
+    sessionStorage.ID_USUARIO = 0;
+    sessionStorage.IS_LOGGED = false
     // finalizarAguardar();
     window.location = "../Cadastro/login.html";
 }

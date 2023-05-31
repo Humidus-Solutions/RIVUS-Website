@@ -1,0 +1,69 @@
+.main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0a0a0f;
+}
+
+/*
+.main .ball1 {
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    width: 288px;
+    height: 288px;
+    border-radius: 50%;
+    background: linear-gradient(to left, #7eadc1d8, #7eadc157);
+    backdrop-filter: blur(18px);
+    
+}
+
+.main .ball2 {
+    position: absolute;
+    bottom: 10%;
+    right: 8%;
+    width: 188px;
+    height: 188px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #7eadc157, #7eadc1d8);
+    backdrop-filter: blur(18px);
+    
+}
+*/
+
+.line {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.line1 {
+    left: 3.854166667%;
+}
+
+.line2 {
+    left: 21.875%;
+}
+
+.line3 {
+    left: 40.625%;
+}
+
+.line4 {
+    left: 59.375%;
+}
+
+.line5 {
+    left: 78.125%;
+}
+
+.line6 {
+    left: 96.09375%;
+}

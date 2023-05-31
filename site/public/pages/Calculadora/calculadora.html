@@ -1,125 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="calculadora.css" />
-    <title>Simulador Financeiro</title>
-  </head>
+		<link rel="stylesheet" href="calculadora.css" />
+		<title>Rivus | Simulador Financeiro</title>
+		<link rel="icon" href="../../assets/logo.png" />
+	</head>
 
-  <body>
-    <div class="menu" onclick="change()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+	<body>
+		<div class="menu" onclick="change()">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
 
-    <div class="menu-screen" id="hbMenu">
-      <ul>
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="./">Calculadora</a></li>
-        <li><a href="../Cadastro/login.html">Login</a></li>
-        <li><a href="../Cadastro/cadastro.html">Cadastrar - se</a></li>
-        <li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
-      </ul>
-    </div>
+		<div class="menu-screen" id="hbMenu">
+			<ul>
+				<li><a href="../../index.html">Home</a></li>
+				<li><a href="./">Calculadora</a></li>
+				<li><a href="../Cadastro/login.html">Login</a></li>
+				<li><a href="../Cadastro/cadastro.html">Cadastrar - se</a></li>
+				<li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
+			</ul>
+		</div>
 
-    <div class="calculadora">
-      <div class="popUp" id="pop">
-        <div class="top" onclick="closePop()">
-          <div class="close" >X</div>
-        </div>
-        <div class="text" id="result"></div>
-      </div>
-      <div class="form">
-        <div class="title">Calculadora</div>
-        <div class="box">
-          <label for="">Média do valor da conta de água do último mês:</label>
-          <input type="text" id="input_valor_agua" placeholder="Gasto mensal"/>
-        </div>
+		<div class="main">
+			<!-- Linhas do fundo -->
+			<div class="line line1"></div>
+			<div class="line line2"></div>
+			<div class="line line3"></div>
+			<div class="line line4"></div>
+			<div class="line line5"></div>
+			<div class="line line6"></div>
+			<!-- Linhas do fundo -->
 
-        <div class="box">
-          <label for="">Quantidade de litros gastos por mês:</label>
-          <input type="text" id="input_litros" placeholder="Litros por mês"/>
-        </div>
+			<div class="calculadora">
+				<div class="popUp" id="pop">
+					<div class="top" onclick="closePop()">
+						<div class="close">X</div>
+					</div>
+					<div class="text" id="result"></div>
+				</div>
+				<div class="form">
+					<div class="title">Calculadora</div>
+					<div class="box">
+						<label for="">Média do valor da conta de água do último mês:</label>
+						<input
+							type="text"
+							id="input_valor_agua"
+							placeholder="Gasto mensal"
+						/>
+					</div>
 
-        <div class="box">
-          <label for="">Área da empresa:</label>
-          <input type="text" id="input_area" placeholder="Área em M2"/>
-        </div>
+					<div class="box">
+						<label for="">Quantidade de litros gastos por mês:</label>
+						<input type="text" id="input_litros" placeholder="Litros por mês" />
+					</div>
 
-        <div class="box">
-          <button onclick="economia(), close()">calcular</button>
-        </div>
-      </div>
-    </div>
-    <div class="footer">
-      <div class="container">
-        <div class="box1">
-          <div class="logo">
-            <h1>Humidus Rivus</h1>
-            <div class="img-container">
-              <img src="../../assets/logo.png" alt="" />
-            </div>
-          </div>
+					<div class="box">
+						<label for="">Área da empresa:</label>
+						<input type="text" id="input_area" placeholder="Área em M2" />
+					</div>
 
-          <p>c.2023 Humidus Rivus, all rights reserved.</p>
-        </div>
+					<div class="box">
+						<button onclick="economia(), close()">calcular</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <div class="box2">
-          <ul class="explore">
-            <li class="title">Explore</li>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../Cadastro/login.html">Login</a></li>
-            <li><a href="../Cadastro/cadastro.html">Cadastro</a></li>
-            <li>
-              <a href="./">Calculadora</a>
-            </li>
-            <li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
-          </ul>
-        </div>
+		<div class="footer">
+			<div class="container">
+				<div class="box1">
+					<div class="logo">
+						<h1>Humidus Rivus</h1>
+						<div class="img-container">
+							<img src="../../assets/logo.png" alt="" />
+						</div>
+					</div>
 
-        <div class="box3">
-          <ul class="contact-info">
-            <li class="title">Contate</li>
-            <li>Rua Haddock Lobo, nº 834</li>
-            <li>Jardins, SP, 01414-000</li>
-            <li>+55 (11)99788-1987</li>
-            <li>rivus_humidus@gmail.com</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
+					<p>c.2023 Humidus Rivus, all rights reserved.</p>
+				</div>
+
+				<div class="box2">
+					<ul class="explore">
+						<li class="title">Explore</li>
+						<li><a href="../../index.html">Home</a></li>
+						<li><a href="../Cadastro/login.html">Login</a></li>
+						<li><a href="../Cadastro/cadastro.html">Cadastro</a></li>
+						<li>
+							<a href="./">Calculadora</a>
+						</li>
+						<li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
+					</ul>
+				</div>
+
+				<div class="box3">
+					<ul class="contact-info">
+						<li class="title">Contate</li>
+						<li>Rua Haddock Lobo, nº 834</li>
+						<li>Jardins, SP, 01414-000</li>
+						<li>+55 (11)99788-1987</li>
+						<li>rivus_humidus@gmail.com</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
 
+<script src="../../js/menu.js"></script>
+
 <script>
-  let popUp = document.getElementById("pop");
-  var hbMenu = document.getElementById("hbMenu");
+	let popUp = document.getElementById("pop");
 
-  function change() {
-    hbMenu.classList.toggle("active");
-  }
+	function closePop() {
+		popUp.classList.toggle("show");
+	}
 
-  function closePop() {
-    popUp.classList.toggle("show");
-  }
+	function economia() {
+		popUp.classList.toggle("show");
 
-  function economia() {
-    popUp.classList.toggle("show");
+		var media_conta_mensal = Number(input_valor_agua.value);
+		var litros_mes = Number(input_litros.value);
+		var area = Number(input_area.value);
 
-    var media_conta_mensal = Number(input_valor_agua.value);
-    var litros_mes = Number(input_litros.value);
-    var area = Number(input_area.value);
+		var reusoDeAgua = litros_mes * 0.5;
+		var lucro = media_conta_mensal * 0.5;
+		var capacidade = 110;
+		var agua = area * capacidade;
 
-    var reusoDeAgua = litros_mes * 0.5;
-    var lucro = media_conta_mensal * 0.5;
-    var capacidade = 110;
-    var agua = area * capacidade;
-
-    result.innerHTML = `
+		result.innerHTML = `
       <p>
         Você gastou <b>R$${media_conta_mensal}</b> no último mês, utilizando um total de <b>
         ${litros_mes}</b> litros .
@@ -129,11 +143,5 @@
         E por mês sua empresa capitara de agua da chuva <b>${agua}</b> litros de agua.
       </p>
         `; // se o total de captação de água da chuva for maior ou igual ao reuso a empresa pagaá apenas a água potável para consumo dos funcionários e visitantes
-  }
-
-  var hbMenu = document.getElementById("hbMenu");
-
-  function change() {
-    hbMenu.classList.toggle("active");
-  }
+	}
 </script>

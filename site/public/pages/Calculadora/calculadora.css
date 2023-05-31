@@ -1,6 +1,7 @@
 @import url('../../style/fonts.css');
 @import url('../../style/menu.css');
 @import url('../../style/footer.css');
+@import url('../pageBg.css');
 
 * {
   padding: 0;
@@ -17,6 +18,7 @@ a {
 
 body {
  background: url('../../assets/teamfilter.jpg');
+ overflow-x: hidden;
 }
 
 .calculadora {

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rivus | Dashboards</title>
+    <link rel="icon" href="../../assets/logo.png" />
 
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./dashboards.css">
@@ -28,7 +29,11 @@
 <!-- <body onload=" atualizarFeed()"> -->
 
 <body>
-
+    <div class="alertScreen" id="logAlert">
+        <div class="alertText">
+            <h1>! Realize o login para acessar a dashboard !</h1>
+        </div>
+    </div>
 
     <div class="geral">
         <header>
@@ -164,10 +169,24 @@
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     validarSessao();
 
-
     let proximaAtualizacao;
 
+    function popAlert() {
+        let alert = document.getElementById('logAlert')
+
+        alert.classList.toggle('popped')
+    }
+
     window.onload = obterDadosGraficos();
+    window.onload = () => {
+        if(sessionStorage.IS_LOGGED == 'false') {
+            popAlert()
+            setTimeout(() => {
+                window.location = '/pages/Cadastro/login.html'
+            }, 1200)
+            return
+        } 
+    }
 
     function obterDadosGraficos() {
         obterDadosGrafico(1)
