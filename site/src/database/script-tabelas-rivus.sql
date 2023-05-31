@@ -11,15 +11,12 @@ CREATE TABLE cadastroEmpresa (
 
 -- insert into aviso (titulo, descricao, fk_empresa) values
 create table cisterna (
-/* em nossa regra de negócio, um cisterna tem apenas um sensor */
 	idCisterna INT PRIMARY KEY AUTO_INCREMENT,
 	litros INT,
 	fkEmpresa INT,
 	CONSTRAINT fkEmpresa FOREIGN KEY (fkEmpresa) REFERENCES cadastroEmpresa(idEmpresa)
 );
 -- insert into cisterna (descricao) values ('cisterna1');
-
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
 
 create table medida (
 	id INT PRIMARY KEY AUTO_INCREMENT,
