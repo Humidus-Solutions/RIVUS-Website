@@ -6,10 +6,10 @@ function buscarUltimasMedidas(idCisterna, limite_linhas) {
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
         instrucaoSql = `select top ${limite_linhas}
-        chave, momento from medida where fk_cisterna = ${idCisterna} order by id desc`;
+        chave, momento from medida where fkCisterna = ${idCisterna} order by id desc`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `select  
-        chave, momento from medida where fk_cisterna = ${idCisterna} order by id desc limit ${limite_linhas}`;
+        chave, momento from medida where fkCisterna = ${idCisterna} order by id desc limit ${limite_linhas}`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -24,10 +24,10 @@ function buscarMedidasEmTempoReal(idCisterna) {
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `select chave, momento, fk_cisterna from medida where fk_cisterna = ${idCisterna} order by id desc`;
+        instrucaoSql = `select chave, momento from medida`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select chave, momento, fk_cisterna from medida where fk_cisterna = ${idCisterna} order by id desc limit 1`;
+        instrucaoSql = `select chave, momento from medida`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
