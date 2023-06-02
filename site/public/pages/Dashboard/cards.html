@@ -24,69 +24,39 @@
   </head>
 
   <body onload="validarSessao(), atualizacaoPeriodica()">
-
     <div class="line line1"></div>
-	<div class="line line2"></div>
-	<div class="line line3"></div>
-	<div class="line line4"></div>
-	<div class="line line5"></div>
-	<div class="line line6"></div>
+    <div class="line line2"></div>
+    <div class="line line3"></div>
+    <div class="line line4"></div>
+    <div class="line line5"></div>
+    <div class="line line6"></div>
 
     <div class="main">
+      <div class="menu" onclick="change()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
 
-        <div class="menu" onclick="change()">
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
-
-		<div class="menu-screen" id="hbMenu">
-			<ul>
-				<li><a href="../../index.html">Home</a></li>
-				<li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
-				<li><a href="../Cadastro/login.html">Login</a></li>
-				<li><a href="../Cadastro/cadastro.html">Cadastrar - se</a></li>
-				<li><a href="./">Dashboard</a></li>
-			</ul>
-		</div>
+      <div class="menu-screen" id="hbMenu">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../Calculadora/calculadora.html">Calculadora</a></li>
+          <li><a href="../Cadastro/login.html">Login</a></li>
+          <li><a href="../Cadastro/cadastro.html">Cadastrar - se</a></li>
+          <li><a href="./">Dashboard</a></li>
+        </ul>
+      </div>
 
       <div class="janela">
         <nav>
-          <div class="divLogo">
+          <div class="divLogo" style="width: 50px">
             <a href="../index.html"
               ><img src="../../assets/logo-hardblue.png" alt=""
             /></a>
           </div>
           <div class="btns-dash">
             <!-- O gráfico é chamado de acordo com o id (fk_cisterna) do banco  -->
-            <button
-              class="btn-chart btn-pink"
-              onclick="exibirAquario(1)"
-              id="btnAquario1"
-            >
-              Cisterna 1
-            </button>
-            <button
-              class="btn-chart btn-white"
-              onclick="exibirAquario(2)"
-              id="btnAquario2"
-            >
-              Cisterna 2
-            </button>
-            <button
-              class="btn-chart btn-white"
-              onclick="exibirAquario(3)"
-              id="btnAquario3"
-            >
-              Cisterna 3
-            </button>
-            <button
-              class="btn-chart btn-white"
-              onclick="exibirAquario(4)"
-              id="btnAquario4"
-            >
-              Cisterna 4
-            </button>
           </div>
 
           <div class="hello">
@@ -203,25 +173,37 @@
       setTimeout(atualizacaoPeriodica, 5000);
     }
 
-    
     function exibirAquario(idCisterna) {
-        let todosOsGraficos = document.getElementById("graficos")
+      let todosOsGraficos = document.getElementById("graficos");
 
-        for (i = 1; i <= 4; i++) {
-
-
-            // alterando estilo do botão
-            let btnAtual = document.getElementById(`btnAquario${i}`)
-            if (btnAtual.classList.contains("btn-pink")) {
-                btnAtual.classList.remove("btn-pink")
-            }
-            btnAtual.classList.add("btn-white")
-        }
-
+      for (i = 1; i <= 4; i++) {
         // alterando estilo do botão
-        let btnExibir = document.getElementById(`btnAquario${idCisterna}`)
-        btnExibir.classList.remove("btn-white")
-        btnExibir.classList.add("btn-pink")
+        let btnAtual = document.getElementById(`btnAquario${i}`);
+        if (btnAtual.classList.contains("btn-pink")) {
+          btnAtual.classList.remove("btn-pink");
+        }
+        btnAtual.classList.add("btn-white");
+      }
+
+      // alterando estilo do botão
+      let btnExibir = document.getElementById(`btnAquario${idCisterna}`);
+      btnExibir.classList.remove("btn-white");
+      btnExibir.classList.add("btn-pink");
+    }
+
+    function getLitros() {
+      fetch("/cisternas/puxarLitros", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
     }
   </script>
 </html>
