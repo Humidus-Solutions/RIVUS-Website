@@ -28,12 +28,12 @@ git clone https://github.com/Humidus-Solutions/RIVUS-Website.git
 
 **2. Vá para o diretório do site**:
 ```
-cd site/public/
+npm install
 ```
     
 **3. Abre a página em seu navegador**:
 ```
-start index.html
+npm start
 ```
 
 ## Tecnologias utilizadas
