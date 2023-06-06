@@ -9,14 +9,14 @@ CREATE TABLE cadastroEmpresa (
 	senha VARCHAR(50)
 );
 
--- insert into aviso (titulo, descricao, fk_empresa) values
 create table cisterna (
 	idCisterna INT PRIMARY KEY AUTO_INCREMENT,
 	litros INT,
 	fkEmpresa INT,
 	CONSTRAINT fkEmpresa FOREIGN KEY (fkEmpresa) REFERENCES cadastroEmpresa(idEmpresa)
 );
--- insert into cisterna (descricao) values ('cisterna1');
+
+insert into cisterna values (null, 500, 1);
 
 create table medida (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -25,11 +25,11 @@ create table medida (
 	fkCisterna INT,
 	CONSTRAINT fkCisterna FOREIGN KEY (fkCisterna) REFERENCES cisterna(idCisterna)
 );
--- insert into medida (chave, momento, fk_cisterna) values (1, NOW(), 1), (2, NOW(), 1), (3, NOW(), 1), (4, NOW(), 1), (4, NOW(), 1);
--- insert into medida (chave, momento, fk_cisterna) values (4, NOW(), 2), (4, NOW(), 2), (3, NOW(), 2), (2, NOW(), 2), (1, NOW(), 2);
--- insert into medida (chave, momento, fk_cisterna) values (0, NOW(), 3), (1, NOW(), 3), (3, NOW(), 3), (4, NOW(), 3), (4, NOW(), 3);
--- insert into medida (chave, momento, fk_cisterna) values (4, NOW(), 4), (4, NOW(), 4), (2, NOW(), 4), (1, NOW(), 4), (0, NOW(), 4);
--- insert into medida (chave, momento, fk_cisterna) values (1, NOW(), 1), (2, NOW(), 2), (3, NOW(), 3), (4, NOW(), 4);
+insert into medida (chave, momento, fkcisterna) values (1, NOW(), 1), (2, NOW(), 1), (3, NOW(), 1), (4, NOW(), 1), (4, NOW(), 1);
+insert into medida (chave, momento, fkcisterna) values (4, NOW(), 2), (4, NOW(), 2), (3, NOW(), 2), (2, NOW(), 2), (1, NOW(), 2);
+insert into medida (chave, momento, fkcisterna) values (0, NOW(), 3), (1, NOW(), 3), (3, NOW(), 3), (4, NOW(), 3), (4, NOW(), 3);
+insert into medida (chave, momento, fkcisterna) values (4, NOW(), 4), (4, NOW(), 4), (2, NOW(), 4), (1, NOW(), 4), (0, NOW(), 4);
+insert into medida (chave, momento, fkcisterna) values (1, NOW(), 1), (2, NOW(), 2), (3, NOW(), 3), (4, NOW(), 4);
 
 
 

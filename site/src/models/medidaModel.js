@@ -19,7 +19,7 @@ function buscarUltimasMedidas(idCisterna, limite_linhas) {
     return database.executar(instrucaoSql);
 }
 
-function buscarMedidasEmTempoReal(idCisterna) {
+function buscarMedidasEmTempoReal() {
 
     instrucaoSql = ''
 
